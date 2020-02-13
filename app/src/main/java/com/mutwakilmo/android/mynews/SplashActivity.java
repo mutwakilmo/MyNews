@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     // Class name for Log tag
     public static final String LOG_TAG = SplashActivity.class.getSimpleName();
     //Duration of wait
-    private final int SPLASH_DISPLAY_LENGHT = 7000;
+    private final int SPLASH_DISPLAY_LENGHT = 8000;
 
     @BindView(R.id.animation_view)
     LottieAnimationView animationView;

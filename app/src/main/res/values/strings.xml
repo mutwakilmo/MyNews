@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyNews</string>
+    <string name="welcome">Welcome to MyNews app \n fetches articles from \n NewYork Times APIs</string>
 </resources>
