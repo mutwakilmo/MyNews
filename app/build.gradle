@@ -36,8 +36,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.0.7'
 
     //Butter knife
-    implementation 'com.jakewharton:butterknife:10.2.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 
     //ICE PICK (Bundle)
     //OLD version of Gradle : compile 'frankiesardo:icepick:3.1.0'
