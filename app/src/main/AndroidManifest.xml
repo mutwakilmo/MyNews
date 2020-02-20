@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mutwakilmo.android.mynews">
+   <!-- A permission is configured via the  <uses-permission>   tag followed by the
+    permission in question, here INTERNET. You can retrieve the full list of permissions
+    from Android’s site-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
