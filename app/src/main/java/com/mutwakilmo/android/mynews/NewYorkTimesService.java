@@ -1,10 +1,9 @@
 package com.mutwakilmo.android.mynews;
 
 import com.mutwakilmo.android.mynews.most_popular.MostPopular;
+import com.mutwakilmo.android.mynews.top_stories.TopStoriesResponse;
 
-import java.util.List;
-
-import retrofit2.Call;
+import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,19 +27,32 @@ import retrofit2.http.Query;
 public interface NewYorkTimesService {
 
 
-    // Most Popular API
-    @GET("mostpopular/v2/viewed/{period}.json")
-    Call<List<MostPopular>> getMostPopular(
-            @Path("period") int PERIOD,
-            @Query("api-key") String API_KEY
-    );
 
+    String API_KEY = "api-key=70181eda313a4fc7bf8141b72d916516";
 
-    public static final Retrofit retrofit = new Retrofit.Builder()
+             Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.nytimes.com/svc/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build();
+
+
+    // Most Popular API
+    @GET("mostpopular/v2/viewed/{period}.json")
+    Observable<MostPopular> getMostPopular(
+            @Path("period") int PERIOD,
+            @Query("api-key") String API_KEY
+    );
+
+    // Top Stories API
+    @GET("topstories/v2/{section}.json")
+    Observable<TopStoriesResponse> getTopStories(
+            @Path("section") String SECTION,
+            @Query("api-key") String API_KEY
+    );
+
+
+
 
 
 }

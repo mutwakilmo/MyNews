@@ -5,4 +5,5 @@ package com.mutwakilmo.android.mynews;
  */
 public class NewsStream {
 
+
 }
