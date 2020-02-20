@@ -18,7 +18,7 @@ public class MyHttpURLConnection {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
-            
+
             // -------------------------------------------------------------------------------------
             //   1 - Declare a URL Connection
             //  From an HTTP address contained in a String variable, we’re creating a URL object.
