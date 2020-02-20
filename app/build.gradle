@@ -46,4 +46,10 @@ dependencies {
     api 'frankiesardo:icepick:3.2.0'
     compileOnly 'frankiesardo:icepick-processor:3.2.0'
     annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.7.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
 }

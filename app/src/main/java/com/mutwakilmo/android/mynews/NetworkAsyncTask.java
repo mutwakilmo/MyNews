@@ -6,7 +6,7 @@ import android.util.Log;
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Mutwakil Mo on 20/02/2020
+ * Created by Mutwakil Mo🐮🐮🐮 on 20/02/2020
  */
 
 // -------------------------------------------------------------------------------------
@@ -47,5 +47,8 @@ public class NetworkAsyncTask extends AsyncTask<String, Void, String> {
         return MyHttpURLConnection.startHttpRequest(url[0]);
     }
 
-
+// -------------------------------------------------------------------------------------
+//  This technique to retrieve remote data, via HttpURLConnection, is relatively old and
+//  not necessarily easy or simple to use..°°°°°°))))🐮🐮🐮🐮
+// -------------------------------------------------------------------------------------
 }
