@@ -47,7 +47,7 @@ public class MainFragment extends Fragment implements NetworkAsyncTask.Listeners
     // ------------------
 
     private void executeHttpRequest(){
-        new NetworkAsyncTask(this).execute("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=nBYpMqISkDcUqtnh8ZUVzKMbdtRWwKHG");
+        new NetworkAsyncTask(this).execute("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=FAPKrODFWcdFsvvfOBe8huf5SCc0NnBP");
     }
 
     @Override
