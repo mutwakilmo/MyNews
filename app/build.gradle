@@ -43,6 +43,9 @@ dependencies {
     //ICE PICK (Bundle)
     //OLD version of Gradle : compile 'frankiesardo:icepick:3.1.0'
     //OLD version of Gradle : provided 'frankiesardo:icepick-processor:3.1.0'
+/*
+    No need to use this library
+*/
     api 'frankiesardo:icepick:3.2.0'
     compileOnly 'frankiesardo:icepick-processor:3.2.0'
     annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
