@@ -21,7 +21,7 @@ public interface NewYorkTimesService {
 
 
 
-    String API_KEY = "api-key=70181eda313a4fc7bf8141b72d916516";
+   
 
              Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.nytimes.com/svc/")
