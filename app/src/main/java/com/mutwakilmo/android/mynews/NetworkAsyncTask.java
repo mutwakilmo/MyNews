@@ -1,6 +1,5 @@
 package com.mutwakilmo.android.mynews;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import java.lang.ref.WeakReference;
@@ -13,7 +12,8 @@ import java.lang.ref.WeakReference;
 //  Explanations: All we’ve done here is called our static public method  startHttpRequest()
 //  in the  doInBackground()  of our AsyncTask.
 // -------------------------------------------------------------------------------------
-public class NetworkAsyncTask extends AsyncTask<String, Void, String> {
+public class NetworkAsyncTask extends android.os.AsyncTask<String, Void, String> {
+
     public interface Listeners {
         void onPreExecute();
         void doInBackground();
@@ -46,9 +46,9 @@ public class NetworkAsyncTask extends AsyncTask<String, Void, String> {
         Log.e("TAG", "AsyncTask doing some big work...");
         return MyHttpURLConnection.startHttpRequest(url[0]);
     }
+}
 
 // -------------------------------------------------------------------------------------
 //  This technique to retrieve remote data, via HttpURLConnection, is relatively old and
 //  not necessarily easy or simple to use..°°°°°°))))🐮🐮🐮🐮
 // -------------------------------------------------------------------------------------
-}
