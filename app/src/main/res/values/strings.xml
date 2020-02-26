@@ -26,7 +26,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
     <string name="most_popular_url">https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=FAPKrODFWcdFsvvfOBe8huf5SCc0NnBP
 </string>
 

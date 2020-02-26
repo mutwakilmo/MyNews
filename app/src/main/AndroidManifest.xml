@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mutwakilmo.android.mynews">
-   <!-- A permission is configured via the  <uses-permission>   tag followed by the
+    <!--
+     A permission is configured via the  <uses-permission>   tag followed by the
     permission in question, here INTERNET. You can retrieve the full list of permissions
-    from Android’s site-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    from Android’s site
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".NewsMainActivity"></activity>
+        <activity android:name=".WelcomeActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
