@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_topstories"
+            android:title="@string/topstories" />
+
+        <item
+            android:id="@+id/nav_mostpopular"
+            android:title="@string/mostpopular" />
+
+        <item
+            android:id="@+id/nav_technology"
+            android:title="@string/technology" />
+
+
+        <item
+            android:id="@+id/nav_business"
+            android:title="@string/business" />
+
+        <item
+            android:id="@+id/nav_sport"
+            android:title="@string/sport" />
+
+        <item
+            android:id="@+id/nav_travel"
+            android:title="@string/travel" />
+
+        <item
+            android:id="@+id/nav_fashion"
+            android:title="@string/fashion" />
+
+        <item
+            android:id="@+id/nav_science"
+            android:title="@string/science" />
+    </group>
+
+</menu>

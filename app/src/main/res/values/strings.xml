@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">MyNews</string>
     <string name="welcome">Welcome to MyNews app \n fetches articles from \n NewYork Times APIs</string>
+    <string name="action_search">Search</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_help">Help</string>
+    <string name="action_about">About</string>
+    <string name="topstories">Top Stories</string>
+    <string name="mostpopular">Most Popular</string>
+    <string name="technology">Technology</string>
+    <string name="us">US</string>
+    <string name="business">Business</string>
+    <string name="sport">Sport</string>
+    <string name="travel">Travel</string>
+    <string name="fashion">Fashion</string>
+    <string name="science">Science</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
