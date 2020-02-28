@@ -1,11 +1,15 @@
+package com.mutwakilmo.android.mynews.TopStories;
 
-package com.mutwakilmo.android.mynews;
-
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MostPopularAPIs {
+import java.util.List;
+
+/**
+ * Created by Mutwakil Mo🐮🐮🐮 on 28/02/2020
+ */
+
+public class NYTimesTopStories {
 
     @SerializedName("status")
     @Expose
@@ -13,6 +17,12 @@ public class MostPopularAPIs {
     @SerializedName("copyright")
     @Expose
     private String copyright;
+    @SerializedName("section")
+    @Expose
+    private String section;
+    @SerializedName("last_updated")
+    @Expose
+    private String lastUpdated;
     @SerializedName("num_results")
     @Expose
     private Integer numResults;
@@ -36,6 +46,22 @@ public class MostPopularAPIs {
         this.copyright = copyright;
     }
 
+    public String getSection() {
+        return section;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    public String getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(String lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
     public Integer getNumResults() {
         return numResults;
     }
@@ -51,5 +77,4 @@ public class MostPopularAPIs {
     public void setResults(List<Result> results) {
         this.results = results;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Activities;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.mutwakilmo.android.mynews.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

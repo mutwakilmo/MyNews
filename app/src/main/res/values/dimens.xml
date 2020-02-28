@@ -7,4 +7,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+
+    <!-- Search And Notification Activity -->
+    <dimen name="key_words_margin">10dp</dimen>
+
+    <!-- Search Activity dimens -->
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="margin_start">10dp</dimen>
+    <dimen name="text_margin">20dp</dimen>
+    <dimen name="search_query_margin">10dp</dimen>
+    <dimen name="button_margin_top">30dp</dimen>
+    <dimen name="button_margin">16dp</dimen>
+
 </resources>

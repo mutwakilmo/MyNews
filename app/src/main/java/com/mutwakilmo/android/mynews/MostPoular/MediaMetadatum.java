@@ -1,5 +1,5 @@
 
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.MostPoular;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

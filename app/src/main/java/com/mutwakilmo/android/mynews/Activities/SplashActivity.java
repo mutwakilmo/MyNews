@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.mutwakilmo.android.mynews.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
