@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/mutwakil" />
+        app:lottie_rawRes="@raw/navigationdrawersearch" />
 
 
 </LinearLayout>

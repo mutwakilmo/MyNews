@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity
     /**
      * Creates the content view and toolbar, sets up the drawer layout and the
      * action bar toggle, and sets up the navigation view.
-     * @param savedInstanceState    Saved instance state bundle.
+     *
+     * @param savedInstanceState Saved instance state bundle.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setActionBar(toolbar);
-        
-        
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -72,8 +71,9 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Inflates the options menu.
-     * @param menu  Menu to inflate
-     * @return      Returns true if menu is inflated.
+     *
+     * @param menu Menu to inflate
+     * @return Returns true if menu is inflated.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -84,8 +84,9 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Handles a click on the Settings item in the options menu.
-     * @param item  Item in options menu that was clicked.
-     * @return      Returns true if the item was Settings.
+     *
+     * @param item Item in options menu that was clicked.
+     * @return Returns true if the item was Settings.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -114,8 +115,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * Handles a navigation drawer item click. It detects which item was
      * clicked and displays a toast message showing which item.
-     * @param item  Item in the navigation drawer
-     * @return      Returns true after closing the nav drawer
+     *
+     * @param item Item in the navigation drawer
+     * @return Returns true after closing the nav drawer
      */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -163,6 +165,40 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.science));
                 return true;
+            case R.id.nav_automobiles:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.automobiles));
+                return true;
+            case R.id.nav_theatre:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.theatre));
+                return true;
+            case R.id.nav_arts:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.arts));
+                return true;
+
+            case R.id.nav_world:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.world));
+                return true;
+
+            case R.id.nav_health:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.health));
+                return true;
+
+            case R.id.nav_food:
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.food));
+                return true;
+
             default:
                 return false;
         }
@@ -170,14 +206,11 @@ public class MainActivity extends AppCompatActivity
 
     /**
      * Displays a toast message.
-     * @param message   Message to display in toast
+     *
+     * @param message Message to display in toast
      */
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
-
-    /*
-    tabs
-     */
 
 }

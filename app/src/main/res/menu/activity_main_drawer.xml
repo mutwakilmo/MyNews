@@ -4,37 +4,75 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_topstories"
+            android:icon="@drawable/ic_topstories_black_24dp"
             android:title="@string/topstories" />
 
         <item
             android:id="@+id/nav_mostpopular"
-            android:icon="@drawable/ic_mostpoular_white_24dp"
+            android:icon="@drawable/ic_mostpopular_black_24dp"
             android:title="@string/mostpopular" />
 
         <item
             android:id="@+id/nav_technology"
+            android:icon="@drawable/ic_technology_black_24dp"
             android:title="@string/technology" />
 
 
         <item
             android:id="@+id/nav_business"
+            android:icon="@drawable/ic_business_center_black_24dp"
             android:title="@string/business" />
 
         <item
             android:id="@+id/nav_sport"
+            android:icon="@drawable/ic_sport_black_24dp"
             android:title="@string/sport" />
 
         <item
             android:id="@+id/nav_travel"
+            android:icon="@drawable/ic_travel_black_24dp"
             android:title="@string/travel" />
 
         <item
             android:id="@+id/nav_fashion"
+            android:icon="@drawable/ic_fashion_black_24dp"
             android:title="@string/fashion" />
 
         <item
             android:id="@+id/nav_science"
+            android:icon="@drawable/ic_science_black_24dp"
             android:title="@string/science" />
+
+        <item
+            android:id="@+id/nav_automobiles"
+            android:icon="@drawable/ic_automobile_car_black_24dp"
+            android:title="@string/automobiles" />
+
+        <item
+            android:id="@+id/nav_theatre"
+            android:icon="@drawable/ic_theatre_black_24dp"
+            android:title="@string/theatre" />
+
+
+        <item
+            android:id="@+id/nav_arts"
+            android:icon="@drawable/ic_arts_black_24dp"
+            android:title="@string/arts" />
+
+        <item
+            android:id="@+id/nav_world"
+            android:icon="@drawable/ic_world_black_24dp"
+            android:title="@string/world" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/ic_health_black_24dp"
+            android:title="@string/health" />
+
+        <item
+            android:id="@+id/nav_food"
+            android:icon="@drawable/ic_food_black_24dp"
+            android:title="@string/food" />
     </group>
+
 
 </menu>
