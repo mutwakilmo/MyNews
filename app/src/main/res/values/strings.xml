@@ -23,4 +23,7 @@
     <string name="world">World</string>
     <string name="health">Health</string>
     <string name="food">Food</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

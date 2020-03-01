@@ -10,17 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.mutwakilmo.android.mynews.R;
+import com.mutwakilmo.android.mynews.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
+
 
     /**
      * Creates the content view and toolbar, sets up the drawer layout and the
@@ -126,74 +129,88 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_topstories:
+                mViewPager.setCurrentItem(0);
                 // Handle the camera import action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.topstories));
                 return true;
             case R.id.nav_mostpopular:
+                mViewPager.setCurrentItem(1);
                 // Handle the gallery action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.mostpopular));
                 return true;
             case R.id.nav_technology:
+                mViewPager.setCurrentItem(2);
                 // Handle the slideshow action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.technology));
                 return true;
             case R.id.nav_business:
+                mViewPager.setCurrentItem(3);
                 // Handle the tools action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.business));
                 return true;
             case R.id.nav_sport:
+                mViewPager.setCurrentItem(4);
                 // Handle the share action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.sport));
                 return true;
             case R.id.nav_travel:
+                mViewPager.setCurrentItem(5);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.travel));
                 return true;
             case R.id.nav_fashion:
+                mViewPager.setCurrentItem(6);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.fashion));
                 return true;
             case R.id.nav_science:
+                mViewPager.setCurrentItem(7);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.science));
                 return true;
             case R.id.nav_automobiles:
+                mViewPager.setCurrentItem(8);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.automobiles));
                 return true;
             case R.id.nav_theatre:
+                mViewPager.setCurrentItem(9);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.theatre));
                 return true;
             case R.id.nav_arts:
+                mViewPager.setCurrentItem(10);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.arts));
                 return true;
 
             case R.id.nav_world:
+                mViewPager.setCurrentItem(11);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.world));
                 return true;
 
             case R.id.nav_health:
+                mViewPager.setCurrentItem(12);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.health));
                 return true;
 
             case R.id.nav_food:
+                mViewPager.setCurrentItem(13);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.food));
@@ -212,5 +229,15 @@ public class MainActivity extends AppCompatActivity
     public void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
+
+    //SetupTabs
+    private void setupTabs() {
+        mViewPager = findViewById(R.id.viewpager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        mViewPager.setAdapter(viewPagerAdapter);
+        mTabLayout = findViewById(R.id.tab_layout);
+        mTabLayout.setupWithViewPager(mViewPager);
+    }
+
 
 }

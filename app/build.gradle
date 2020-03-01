@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'MY_NYT_API_KEY', TheNewYorkTimesAPIsKey
+    }
     //    Add this to your build.gradle for Butter knife
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
