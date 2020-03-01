@@ -24,4 +24,12 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+       android:src="@drawable/ic_brightness_2_white_24dp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
