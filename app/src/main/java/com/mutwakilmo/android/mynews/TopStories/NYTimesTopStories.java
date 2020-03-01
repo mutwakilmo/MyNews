@@ -28,7 +28,7 @@ public class NYTimesTopStories {
     private Integer numResults;
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
+    private List<TobStoriesResult> results = null;
 
     public String getStatus() {
         return status;
@@ -70,11 +70,11 @@ public class NYTimesTopStories {
         this.numResults = numResults;
     }
 
-    public List<Result> getResults() {
+    public List<TobStoriesResult> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<TobStoriesResult> results) {
         this.results = results;
     }
 }

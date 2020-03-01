@@ -19,7 +19,7 @@ public class MostPopularAPIs {
     private Integer numResults;
     @SerializedName("results")
     @Expose
-    private List<Result> results = null;
+    private List<MostPopularResult> results = null;
 
     public String getStatus() {
         return status;
@@ -45,11 +45,11 @@ public class MostPopularAPIs {
         this.numResults = numResults;
     }
 
-    public List<Result> getResults() {
+    public List<MostPopularResult> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<MostPopularResult> results) {
         this.results = results;
     }
 

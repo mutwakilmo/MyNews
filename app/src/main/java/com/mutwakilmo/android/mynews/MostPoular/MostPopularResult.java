@@ -1,4 +1,3 @@
-
 package com.mutwakilmo.android.mynews.MostPoular;
 
 import com.google.gson.annotations.Expose;
@@ -6,8 +5,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Result {
-
+/**
+ * Created by Mutwakil Mo on 22/02/2020
+ */
+public class MostPopularResult {
     @SerializedName("uri")
     @Expose
     private String uri;

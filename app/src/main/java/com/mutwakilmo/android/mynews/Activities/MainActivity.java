@@ -52,9 +52,12 @@ public class MainActivity extends AppCompatActivity
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
+
+        setupTabs();
     }
 
     private void setActionBar(Toolbar toolbar) {
+        setSupportActionBar(toolbar);
     }
 
     /**
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
 
     /**
      * Inflates the options menu.
@@ -122,7 +126,7 @@ public class MainActivity extends AppCompatActivity
      * @param item Item in the navigation drawer
      * @return Returns true after closing the nav drawer
      */
-    @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

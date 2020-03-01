@@ -6,10 +6,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by Mutwakil Mo🐮🐮🐮 on 28/02/2020
+ * Created by Mutwakil Mo on 22/02/2020
  */
-
-public class Result {
+public class TobStoriesResult {
 
     @SerializedName("section")
     @Expose
