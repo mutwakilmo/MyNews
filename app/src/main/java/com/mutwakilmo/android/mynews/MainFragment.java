@@ -1,4 +1,3 @@
-/*
 package com.mutwakilmo.android.mynews;
 
 import android.os.Bundle;
@@ -17,15 +16,12 @@ import com.mutwakilmo.android.mynews.TopStories.TobStoriesResult;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
 
-
-*/
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MainFragment#newInstance} factory method to
- * create an instance of this fragment.
- *//*
+ * create an instance of this fragment.*/
+
 
 public class MainFragment extends Fragment {
 
@@ -41,15 +37,14 @@ public class MainFragment extends Fragment {
         // Required empty public constructor
     }
 
-    */
 /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MainFragment.
-     *//*
+     * @return A new instance of fragment MainFragment.*/
+
 
     // TODO: Rename and change types and number of parameters
     public static MainFragment newInstance(String newsSections) {
@@ -104,8 +99,7 @@ public class MainFragment extends Fragment {
     }
 
     private void  callTopStoriesNews(String selectedSection){
-        Call<>
+
 
     }
 }
-*/

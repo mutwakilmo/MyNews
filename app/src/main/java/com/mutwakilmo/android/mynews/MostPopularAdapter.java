@@ -1,4 +1,3 @@
-/*
 package com.mutwakilmo.android.mynews;
 
 import android.view.ViewGroup;
@@ -10,10 +9,8 @@ import com.mutwakilmo.android.mynews.MostPoular.MostPopularResult;
 
 import java.util.List;
 
-*/
-/**
- * Created by Mutwakil Mo on 01/03/2020
- *//*
+/* Created by Mutwakil Mo on 01/03/2020*/
+
 
 public class MostPopularAdapter extends RecyclerView.Adapter<TopStoriesAdapter.NewsItemViewHolder> {
     public MostPopularAdapter(List<MostPopularResult> mostPopularResultsItems) {
@@ -35,4 +32,3 @@ public class MostPopularAdapter extends RecyclerView.Adapter<TopStoriesAdapter.N
         return 0;
     }
 }
-*/
