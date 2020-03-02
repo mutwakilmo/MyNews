@@ -25,7 +25,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return MainFragment.newInstance(NYTConstants.NEWS_SECTIONS[position]);
     }
 
     @Override

@@ -10,11 +10,17 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mutwakilmo.android.mynews.MostPoular.MostPopularAPIs;
 import com.mutwakilmo.android.mynews.MostPoular.MostPopularResult;
+import com.mutwakilmo.android.mynews.TopStories.NYTimesTopStories;
 import com.mutwakilmo.android.mynews.TopStories.TobStoriesResult;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /**
@@ -95,11 +101,59 @@ public class MainFragment extends Fragment {
     }
 
     private void callMostPopularNews() {
+        //MostPopular response
+        Call<MostPopularAPIs> mostPopularAPIsCall = mNewYorkTimesService.getMostPopular(1, BuildConfig.MY_NYT_API_KEY);
+        mostPopularAPIsCall.enqueue(new Callback<MostPopularAPIs>() {
+            @Override
+            public void onResponse(Call<MostPopularAPIs> call, Response<MostPopularAPIs> response) {
+                if (response.body() !=null){
+                    mostPopularResultsItems.clear();
+                    mostPopularResultsItems.addAll(response.body().getResults());
+                    mostPopularAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MostPopularAPIs> call, Throwable t) {
+                //Todo Log.d
+
+            }
+        });
 
     }
 
     private void  callTopStoriesNews(String selectedSection){
+        Call<NYTimesTopStories> nyTimesTopStoriesCall;
+        switch (selectedSection){
+            case "Technology":
+                 nyTimesTopStoriesCall = mNewYorkTimesService.getTopStories("technology",BuildConfig.MY_NYT_API_KEY);
+                 break;
+            case "Arts":
+                nyTimesTopStoriesCall = mNewYorkTimesService.getTopStories("arts", BuildConfig.MY_NYT_API_KEY);
+                break;
+            case "Sports":
+                nyTimesTopStoriesCall = mNewYorkTimesService.getTopStories("sports", BuildConfig.MY_NYT_API_KEY);
+            default:
+                nyTimesTopStoriesCall = mNewYorkTimesService.getTopStories("home", BuildConfig.MY_NYT_API_KEY);
+            }
+            nyTimesTopStoriesCall.enqueue(new Callback<NYTimesTopStories>() {
+                @Override
+                public void onResponse(Call<NYTimesTopStories> call, Response<NYTimesTopStories> response) {
+
+                    if (response.body() !=null){
+                        topStoriesResultsItems.clear();
+                        topStoriesResultsItems.addAll(response.body().getResults());
+                        topStoriesAdapter.notifyDataSetChanged();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<NYTimesTopStories> call, Throwable t) {
+
+                }
+            });
+        }
 
 
     }
-}
+
