@@ -16,6 +16,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.mutwakilmo.android.mynews.R;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity
         setActionBar(toolbar);
 
 
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open,
@@ -51,11 +55,13 @@ public class MainActivity extends AppCompatActivity
             navigationView.setNavigationItemSelectedListener(this);
         }
 
-        setupTabs();
+       /* setupTabs();*/
     }
 
     private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(null);
+
     }
 
     /**
@@ -191,7 +197,7 @@ public class MainActivity extends AppCompatActivity
                 displayToast(getString(R.string.theatre));
                 return true;
             case R.id.nav_arts:
-                mViewPager.setCurrentItem(10);
+
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.arts));
@@ -232,12 +238,12 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    //SetupTabs
+/*    //SetupTabs
     private void setupTabs() {
         mViewPager = findViewById(R.id.viewpager);
         mTabLayout = findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
-    }
+    }*/
 
 
 }
