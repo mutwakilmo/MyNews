@@ -16,13 +16,15 @@ public class NetworkAsyncTask extends android.os.AsyncTask<String, Void, String>
 
     public interface Listeners {
         void onPreExecute();
+
         void doInBackground();
+
         void onPostExecute(String success);
     }
 
     private final WeakReference<Listeners> callback;
 
-    public NetworkAsyncTask(Listeners callback){
+    public NetworkAsyncTask(Listeners callback) {
         this.callback = new WeakReference<>(callback);
     }
 

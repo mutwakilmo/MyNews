@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
     /*Use handler to hold welcome activity UI for some time and
      then start the Welcome Activity*/
 
-    private void openWelcomeActivity(){
+    private void openWelcomeActivity() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

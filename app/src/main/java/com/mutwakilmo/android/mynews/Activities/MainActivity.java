@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
                 displayToast(getString(R.string.topstories));
                 return true;
             case R.id.nav_mostpopular:
-              ;
+                ;
                 // Handle the gallery action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.mostpopular));
