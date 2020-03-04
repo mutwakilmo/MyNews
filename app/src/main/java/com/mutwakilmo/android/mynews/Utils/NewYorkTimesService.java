@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Utils;
 
 /**
  * Created by Mutwakil Mo on 22/02/2020

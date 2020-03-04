@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Utils;
 
 import android.util.Log;
 

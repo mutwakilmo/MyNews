@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
