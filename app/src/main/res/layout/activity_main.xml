@@ -43,9 +43,23 @@
                 android:textColor="#3cff00"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-
         </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="16dp"
+            app:tabIndicatorColor="#FFF000"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabTextColor="#DADADA" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
