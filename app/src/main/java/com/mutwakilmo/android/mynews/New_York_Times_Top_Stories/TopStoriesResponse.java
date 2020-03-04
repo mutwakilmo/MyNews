@@ -18,7 +18,7 @@ public class TopStoriesResponse{
 	private String section;
 
 	@SerializedName("results")
-	private List<com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem> results;
+	private List<TopStoriesResultsItem> results;
 
 	@SerializedName("num_results")
 	private int numResults;

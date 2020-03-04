@@ -78,4 +78,18 @@ public class Medium {
         this.mediaMetadata = mediaMetadata;
     }
 
+    @Override
+    public String toString(){
+        return
+                "MediaItem{" +
+                        "copyright = '" + copyright + '\'' +
+                        ",media-metadata = '" + mediaMetadata + '\'' +
+                        ",subtype = '" + subtype + '\'' +
+                        ",caption = '" + caption + '\'' +
+                        ",type = '" + type + '\'' +
+                        ",approved_for_syndication = '" + approvedForSyndication + '\'' +
+                        "}";
+    }
+
+
 }

@@ -253,5 +253,14 @@ public class NYMostPopularResult {
     public void setEtaId(Integer etaId) {
         this.etaId = etaId;
     }
-
+    @Override
+    public String toString() {
+        return "TopStoriesResultsItem{" +
+                "section='" + section + '\'' +
+                ", media=" + media +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", publishedDate='" + publishedDate + '\'' +
+                '}';
+    }
 }

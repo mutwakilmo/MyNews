@@ -54,4 +54,14 @@ public class MediaMetadatum {
         this.width = width;
     }
 
+    @Override
+    public String toString() {
+        return
+                "MediaMetadataItem{" +
+                        "format = '" + format + '\'' +
+                        ",width = '" + width + '\'' +
+                        ",url = '" + url + '\'' +
+                        ",height = '" + height + '\'' +
+                        "}";
+    }
 }

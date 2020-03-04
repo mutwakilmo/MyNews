@@ -23,7 +23,7 @@ public class NYMostPopularResponse {
     private Integer numResults;
     @SerializedName("results")
     @Expose
-    private List<NYMostPopularResult> results = null;
+    private List<NYMostPopularResult> results ;
 
     public String getStatus() {
         return status;
@@ -56,5 +56,14 @@ public class NYMostPopularResponse {
     public void setResults(List<NYMostPopularResult> results) {
         this.results = results;
     }
-
+    @Override
+    public String toString(){
+        return
+                "MostPopularResponse{" +
+                        "copyright = '" + copyright + '\'' +
+                        ",results = '" + results + '\'' +
+                        ",num_results = '" + numResults + '\'' +
+                        ",status = '" + status + '\'' +
+                        "}";
+    }
 }
