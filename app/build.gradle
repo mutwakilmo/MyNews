@@ -76,5 +76,6 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
-    implementation 'androidx.cardview:cardview:1.0.0'
+    //Android ImageViews animated by Ken Burns Effect
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
 }

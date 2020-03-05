@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
+        <com.flaviofaria.kenburnsview.KenBurnsView
             android:id="@+id/img_news"
             android:layout_width="95dp"
             android:layout_height="113dp"
@@ -30,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.246"
             tools:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
             />
 
         <TextView
