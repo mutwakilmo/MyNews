@@ -50,12 +50,11 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
             android:elevation="16dp"
-            app:tabIndicatorColor="#FFF000"
+            app:tabIndicatorColor="@color/colorPrimary"
             app:tabMode="scrollable"
-            app:tabSelectedTextColor="#FFFFFF"
-            app:tabTextColor="#DADADA" />
+             />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"

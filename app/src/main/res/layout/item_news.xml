@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-    Created by Bapusaheb Patil {@link https://bapspatil.com}
+   Created by Mutwakil Mo🐮🐮🐮
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -38,9 +38,9 @@
             android:layout_width="109dp"
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
-            android:fontFamily="@font/archivo_black"
+            android:fontFamily="sans-serif-black"
             android:text="world > arts"
-            android:textColor="@color/title_text_color"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +53,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:text="publish date"
+            android:fontFamily="sans-serif-black"
             android:textColor="@color/content_text_color"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -66,7 +66,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
             android:layout_marginTop="35dp"
-            android:fontFamily="@font/archivo_black"
+            android:fontFamily="sans-serif-black"
             android:text="MyNews Title"
             android:textColor="@color/content_text_color"
             app:layout_constraintBottom_toBottomOf="parent"

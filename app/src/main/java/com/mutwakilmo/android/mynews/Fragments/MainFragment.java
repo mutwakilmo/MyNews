@@ -155,7 +155,7 @@ public class MainFragment extends Fragment {
                 break;
 
             default:
-                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("home", BuildConfig.MY_NYT_API_KEY);
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("topStories", BuildConfig.MY_NYT_API_KEY);
         }
 
         topStoriesResponseCall.enqueue(new Callback<TopStoriesResponse>() {

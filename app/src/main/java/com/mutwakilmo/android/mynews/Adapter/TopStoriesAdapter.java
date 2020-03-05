@@ -14,14 +14,13 @@ import com.bumptech.glide.Glide;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Mutwakil Mo🐮🐮🐮 on 04/03/2020
  */
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.NewsItemViewHolder> {
-    private List<TopStoriesResultsItem> topStoriesResultsItems = new ArrayList<>();
+    private List<TopStoriesResultsItem> topStoriesResultsItems;
     private Context mContext;
 
 
@@ -48,7 +47,8 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + " > " + topStoriesResultsItem.getSubsection());
         else
 
-        holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
+            holder.sectionTextView.setText(topStoriesResultsItem.getSection() + "");
+            holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
 
         if (topStoriesResultsItem.getMultimedia().size() > 0)
             Glide.with(mContext)

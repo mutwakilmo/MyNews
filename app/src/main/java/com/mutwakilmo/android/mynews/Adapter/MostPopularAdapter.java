@@ -1,3 +1,4 @@
+
 package com.mutwakilmo.android.mynews.Adapter;
 
 import android.content.Context;
@@ -14,18 +15,17 @@ import com.bumptech.glide.Glide;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Mutwakil Mo🐮🐮🐮 on 04/03/2020
  */
 public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.NewsItemViewHolder> {
-    private List<NYMostPopularResult> mNYMostPopularResults = new ArrayList<>();
+    private List<NYMostPopularResult> nyMostPopularResults;
     private Context mContext;
 
     public MostPopularAdapter(List<NYMostPopularResult> nyMostPopularResults) {
-        this.mNYMostPopularResults= nyMostPopularResults;
+        this.nyMostPopularResults= nyMostPopularResults;
     }
 
     @NonNull
@@ -40,7 +40,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
     @Override
     public void onBindViewHolder(@NonNull MostPopularAdapter.NewsItemViewHolder holder, int position) {
 
-        NYMostPopularResult nyMostPopularResult = mNYMostPopularResults.get(position);
+        NYMostPopularResult nyMostPopularResult = nyMostPopularResults.get(position);
 
         holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) +"");
         holder.titleTextView.setText(nyMostPopularResult.getTitle() + "");
@@ -50,6 +50,8 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         if (nyMostPopularResult.getMedia().size() > 0 &&  nyMostPopularResult.getMedia().get(0).getMediaMetadata().size()> 0)
             Glide.with(mContext)
                     .load(nyMostPopularResult.getMedia().get(0).getMediaMetadata().get(0).getUrl())
+                    .fallback(R.mipmap.ic_launcher)
+                    .placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .into(holder.newsImageView);
 
@@ -57,8 +59,8 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
     @Override
     public int getItemCount() {
-        if (mNYMostPopularResults == null) return 0;
-        else return mNYMostPopularResults.size();
+        if (nyMostPopularResults == null) return 0;
+        else return nyMostPopularResults.size();
 
     }
 
