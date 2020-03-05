@@ -68,15 +68,13 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         TextView sectionTextView;
         TextView dateTextView;
         TextView titleTextView;
-        TextView subTitleTextView;
-
         public NewsItemViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImageView = itemView.findViewById(R.id.img_news);
             sectionTextView = itemView.findViewById(R.id.tv_section);
             dateTextView = itemView.findViewById(R.id.tv_date);
             titleTextView = itemView.findViewById(R.id.tv_title);
-            subTitleTextView = itemView.findViewById(R.id.tv_description);
+
 
 
         }

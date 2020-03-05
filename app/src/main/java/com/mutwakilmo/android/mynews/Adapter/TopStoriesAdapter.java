@@ -47,7 +47,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
         if (topStoriesResultsItem.getSubsection() != null && !topStoriesResultsItem.getSubsection().isEmpty())
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + " > " + topStoriesResultsItem.getSubsection());
         else
-            holder.sectionTextView.setText(topStoriesResultsItem.getSection() + "");
+
         holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
 
         if (topStoriesResultsItem.getMultimedia().size() > 0)
@@ -70,7 +70,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
         TextView sectionTextView;
         TextView dateTextView;
         TextView titleTextView;
-        TextView subTitleTextView;
+
 
         public NewsItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,7 +78,8 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
             sectionTextView = itemView.findViewById(R.id.tv_section);
             dateTextView = itemView.findViewById(R.id.tv_date);
             titleTextView = itemView.findViewById(R.id.tv_title);
-            subTitleTextView = itemView.findViewById(R.id.tv_description);
+
+
         }
     }
 }

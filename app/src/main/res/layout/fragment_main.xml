@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rv_news"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_main_swipe_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:listitem="@layout/item_news" />
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rv_news"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_news" />
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout><!-- Explanations: Here, we've contained the RecyclerView inside
+   a SwipeRefreshLayout, which will allow us to more easily activate the "Pull To Refresh"
+   feature in our RecyclerView.-->

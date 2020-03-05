@@ -10,21 +10,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.mutwakilmo.android.mynews.BuildConfig;
 import com.mutwakilmo.android.mynews.Adapter.MostPopularAdapter;
+import com.mutwakilmo.android.mynews.Adapter.TopStoriesAdapter;
+import com.mutwakilmo.android.mynews.BuildConfig;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResponse;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResponse;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
-import com.mutwakilmo.android.mynews.Adapter.TopStoriesAdapter;
 import com.mutwakilmo.android.mynews.Utils.NYTConstants;
 import com.mutwakilmo.android.mynews.Utils.NewYorkTimesService;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,6 +39,9 @@ import retrofit2.Response;
  */
 public class MainFragment extends Fragment {
 
+    // 1 - Declare the SwipeRefreshLayout
+    @BindView(R.id.fragment_main_swipe_container)
+    SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView myNewsRecyclerView;
     private TopStoriesAdapter mTopStoriesAdapter;
     private MostPopularAdapter mMostPopularAdapter;
@@ -76,6 +81,8 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // 4 - Configure the SwipeRefreshLayout
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         mTopStoriesAdapter = new TopStoriesAdapter(mTopStoriesResultsItems);
@@ -101,6 +108,11 @@ public class MainFragment extends Fragment {
         return view;
 
     }
+
+
+
+
+
 
     public void callTopStories(String section) {
         Call<TopStoriesResponse> topStoriesResponseCall;
@@ -179,6 +191,8 @@ public class MainFragment extends Fragment {
                 Log.d("ERROR", t.getMessage());
             }
         });
+
+
     }
 }
 
