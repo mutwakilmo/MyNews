@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.mutwakilmo.android.mynews.Adapter.MostPopularAdapter;
 import com.mutwakilmo.android.mynews.Adapter.TopStoriesAdapter;
 import com.mutwakilmo.android.mynews.BuildConfig;
@@ -39,6 +40,7 @@ import retrofit2.Response;
  */
 public class MainFragment extends Fragment {
 
+    private ShimmerFrameLayout mShimmerViewContainer;
     // 1 - Declare the SwipeRefreshLayout
     @BindView(R.id.fragment_main_swipe_container)
     SwipeRefreshLayout swipeRefreshLayout;
@@ -92,6 +94,7 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+//        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
 
         if (getArguments() != null){
             String selectedSection = getArguments().getString(NYTConstants.NYT_SECTION_NAME, NYTConstants.NEWS_SECTIONS[0]);
@@ -165,11 +168,19 @@ public class MainFragment extends Fragment {
                     mTopStoriesResultsItems.addAll(response.body().getResults());
                     mTopStoriesAdapter.notifyDataSetChanged();
                 }
+               /* // Stopping Shimmer Effect's animation after data is loaded to ListView
+                mShimmerViewContainer.stopShimmer();
+                mShimmerViewContainer.setVisibility(View.GONE);*/
+
+
+
+
             }
 
             @Override
             public void onFailure(Call<TopStoriesResponse> call, Throwable t) {
                 Log.d("ERROR", t.getMessage());
+                t.printStackTrace();
             }
         });
     }
@@ -184,15 +195,34 @@ public class MainFragment extends Fragment {
                     mNYMostPopularResults.addAll(response.body().getResults());
                     mMostPopularAdapter.notifyDataSetChanged();
                 }
+                // Stopping Shimmer Effect's animation after data is loaded to ListView
+//                mShimmerViewContainer.stopShimmer();
+//                mShimmerViewContainer.setVisibility(View.GONE);
+
             }
 
             @Override
             public void onFailure(Call<NYMostPopularResponse> call, Throwable t) {
                 Log.d("ERROR", t.getMessage());
+                t.printStackTrace();
             }
         });
 
 
     }
+
+
+   /* @Override
+    public void onResume() {
+        super.onResume();
+        mShimmerViewContainer.stopShimmer();
+    }
+
+    @Override
+    public void onPause() {
+        mShimmerViewContainer.stopShimmer();
+        super.onPause();
+    }*/
+
 }
 

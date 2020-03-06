@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_main_swipe_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--    <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--        android:id="@+id/shimmer_view_container"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        app:shimmer_duration="800">-->
+
+<!--        &lt;!&ndash; Adding 3 rows of placeholders &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <include layout="@layout/data_placeholder" />-->
+
+<!--            <include layout="@layout/data_placeholder" />-->
+
+<!--            <include layout="@layout/data_placeholder" />-->
+<!--            <include layout="@layout/data_placeholder" />-->
+
+<!--            <include layout="@layout/data_placeholder" />-->
+
+<!--            <include layout="@layout/data_placeholder" />-->
+<!--            <include layout="@layout/data_placeholder" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/rv_news"
         android:layout_width="match_parent"

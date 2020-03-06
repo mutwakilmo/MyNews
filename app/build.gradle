@@ -78,4 +78,6 @@ dependencies {
 
     //Android ImageViews animated by Ken Burns Effect
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
+   // Gradle dependency on Shimmer for Android
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 }

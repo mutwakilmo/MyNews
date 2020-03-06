@@ -20,5 +20,16 @@
     <dimen name="search_query_margin">10dp</dimen>
     <dimen name="button_margin_top">30dp</dimen>
     <dimen name="button_margin">16dp</dimen>
+//For shimmer effect
+    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="placeholder_image">50dp</dimen>
+    <dimen name="placeholder_text_height">8dp</dimen>
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="name">15dp</dimen>
+    <dimen name="chef">12dp</dimen>
+    <dimen name="timestamp">11dp</dimen>
+    <dimen name="description">15dp</dimen>
+    <dimen name="price">13dp</dimen>
 
 </resources>
