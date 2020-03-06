@@ -38,8 +38,8 @@
             android:layout_width="109dp"
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
-            android:fontFamily="sans-serif-black"
-            android:text="world > arts"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="world>arts"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,6 @@
             android:layout_marginBottom="16dp"
             android:text="publish date"
             android:fontFamily="sans-serif-black"
-            android:textColor="@color/content_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -66,9 +65,9 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="17dp"
             android:layout_marginTop="35dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/alfa_slab_one"
+            android:includeFontPadding="true"
             android:text="MyNews Title"
-            android:textColor="@color/content_text_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

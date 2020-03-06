@@ -123,8 +123,8 @@ public class MainFragment extends Fragment {
             case "Business":
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("business", BuildConfig.MY_NYT_API_KEY);
                 break;
-            case "Sport":
-                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("sport", BuildConfig.MY_NYT_API_KEY);
+            case "Sports":
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("sports", BuildConfig.MY_NYT_API_KEY);
                 break;
             case "Travel":
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("travel", BuildConfig.MY_NYT_API_KEY);
@@ -138,8 +138,8 @@ public class MainFragment extends Fragment {
             case "Automobiles":
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("automobiles", BuildConfig.MY_NYT_API_KEY);
                 break;
-            case "Theatre":
-                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("theatre", BuildConfig.MY_NYT_API_KEY);
+            case "Politics":
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("politics", BuildConfig.MY_NYT_API_KEY);
                 break;
             case "Arts":
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("arts", BuildConfig.MY_NYT_API_KEY);
@@ -155,7 +155,7 @@ public class MainFragment extends Fragment {
                 break;
 
             default:
-                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("topStories", BuildConfig.MY_NYT_API_KEY);
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("home", BuildConfig.MY_NYT_API_KEY);
         }
 
         topStoriesResponseCall.enqueue(new Callback<TopStoriesResponse>() {

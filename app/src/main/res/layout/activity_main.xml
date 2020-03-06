@@ -50,7 +50,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/colorPrimary"
             android:elevation="16dp"
             app:tabIndicatorColor="@color/colorPrimary"
             app:tabMode="scrollable"

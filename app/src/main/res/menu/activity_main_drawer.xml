@@ -24,7 +24,7 @@
             android:title="@string/business" />
 
         <item
-            android:id="@+id/nav_sport"
+            android:id="@+id/nav_sports"
             android:icon="@drawable/ic_sport_black_24dp"
             android:title="@string/sport" />
 
@@ -49,9 +49,9 @@
             android:title="@string/automobiles" />
 
         <item
-            android:id="@+id/nav_theatre"
+            android:id="@+id/nav_politics"
             android:icon="@drawable/ic_theatre_black_24dp"
-            android:title="@string/theatre" />
+            android:title="@string/politics" />
 
 
         <item

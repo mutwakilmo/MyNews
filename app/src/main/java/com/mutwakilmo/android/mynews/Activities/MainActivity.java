@@ -1,5 +1,6 @@
 package com.mutwakilmo.android.mynews.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -106,7 +107,8 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_search:
-                Toast.makeText(this, "Search", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You Can Search Your Favorite Article", Toast.LENGTH_SHORT).show();
+                openSearchActivity();
                 break;
             case R.id.action_notifications:
                 Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
@@ -164,7 +166,7 @@ public class MainActivity extends AppCompatActivity
                 displayToast(getString(R.string.business));
                 return true;
 
-            case R.id.nav_sport:
+            case R.id.nav_sports:
                 mViewPager.setCurrentItem(4);
                 // Handle the share action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
@@ -198,11 +200,11 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.automobiles));
                 return true;
-            case R.id.nav_theatre:
+            case R.id.nav_politics:
                 mViewPager.setCurrentItem(9);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
-                displayToast(getString(R.string.theatre));
+                displayToast(getString(R.string.politics));
                 return true;
 
             case R.id.nav_arts:
@@ -254,6 +256,13 @@ public class MainActivity extends AppCompatActivity
         mViewPager.setAdapter(viewPagerAdapter);
         mTabLayout = findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
+
+    }
+
+    //Open SearchActivity
+    private void openSearchActivity(){
+        Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
+        startActivity(searchActivity);
 
     }
 

@@ -16,18 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activities.MainActivity">
+        <!-- A child of the main activity -->
+        <activity
+            android:name=".Activities.SearchActivity"
+            android:parentActivityName=".Activities.MainActivity">
 
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
         </activity>
-        <activity
-            android:name=".Activities.WelcomeActivity"
-            />
-        <activity
-            android:name=".Activities.SplashActivity"
-           >
+
+        <activity android:name=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.WelcomeActivity" />
+        <!--Launch Activity  -->
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,8 +40,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>
