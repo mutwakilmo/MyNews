@@ -263,6 +263,7 @@ public class MainActivity extends AppCompatActivity
     private void openSearchActivity(){
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
+        overridePendingTransition(R.anim.slide_in_up,R.anim.slid_out_up);
 
     }
 
