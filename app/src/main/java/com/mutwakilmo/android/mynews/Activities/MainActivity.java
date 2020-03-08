@@ -257,6 +257,7 @@ public class MainActivity extends AppCompatActivity
         mTabLayout = findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
 
+
     }
 
     //Open SearchActivity
@@ -266,6 +267,8 @@ public class MainActivity extends AppCompatActivity
         overridePendingTransition(R.anim.slide_in_up,R.anim.slid_out_up);
 
     }
+
+
 
 
 }

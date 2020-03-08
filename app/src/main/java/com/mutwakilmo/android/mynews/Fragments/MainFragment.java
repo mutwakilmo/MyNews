@@ -94,6 +94,9 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+      /*  // 4 - Configure the SwipeRefreshLayout
+        this.configureSwipeRefreshLayout();*/
+
 //        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
 
         if (getArguments() != null){
@@ -112,10 +115,18 @@ public class MainFragment extends Fragment {
 
     }
 
+   /* // 2 - Configure the SwipeRefreshLayout
+    private void configureSwipeRefreshLayout() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
 
-
-
-
+                callTopStories();
+                callMostPopular();
+            }
+        });
+    }
+*/
 
     public void callTopStories(String section) {
         Call<TopStoriesResponse> topStoriesResponseCall;

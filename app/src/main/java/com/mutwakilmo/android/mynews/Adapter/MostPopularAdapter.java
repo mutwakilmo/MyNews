@@ -5,7 +5,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,6 +46,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
         NYMostPopularResult nyMostPopularResult = nyMostPopularResults.get(position);
 
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation));
         holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) +"");
         holder.titleTextView.setText(nyMostPopularResult.getTitle() + "");
         holder.sectionTextView.setText(nyMostPopularResult.getSection() +"");
@@ -72,12 +75,14 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         TextView sectionTextView;
         TextView dateTextView;
         TextView titleTextView;
+        RelativeLayout container;
         public NewsItemViewHolder(@NonNull View itemView) {
             super(itemView);
             newsImageView = itemView.findViewById(R.id.img_news);
             sectionTextView = itemView.findViewById(R.id.tv_section);
             dateTextView = itemView.findViewById(R.id.tv_date);
             titleTextView = itemView.findViewById(R.id.tv_title);
+            container = itemView.findViewById(R.id.container);
 
 
 
