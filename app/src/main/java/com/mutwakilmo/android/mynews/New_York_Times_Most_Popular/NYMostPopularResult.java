@@ -17,12 +17,7 @@ public class NYMostPopularResult {
     @SerializedName("url")
     @Expose
     private String url;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
-    @SerializedName("asset_id")
-    @Expose
-    private Integer assetId;
+
     @SerializedName("source")
     @Expose
     private String source;
@@ -94,21 +89,7 @@ public class NYMostPopularResult {
         this.url = url;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getAssetId() {
-        return assetId;
-    }
-
-    public void setAssetId(Integer assetId) {
-        this.assetId = assetId;
-    }
 
     public String getSource() {
         return source;

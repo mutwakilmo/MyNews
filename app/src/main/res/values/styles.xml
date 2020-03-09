@@ -7,6 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
 
         <!-- Navigation Drawer -->
         <item name="colorNavigationItem">@color/menu_item_color</item>
@@ -14,6 +15,12 @@
         <item name="drawableNavigationItemBackground">@drawable/menu_background_color_state</item>
     </style>
 
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
     <style name="TransparentView">
         <item name="background">@android:color/transparent</item>
     </style>
@@ -22,6 +29,7 @@
         <item name="itemIconTint">?attr/colorNavigationItem</item>
         <item name="itemTextColor">?attr/colorNavigationItem</item>
         <item name="itemBackground">?attr/drawableNavigationItemBackground</item>
+
     </style>
 
     <!--<item name="itemHorizontalPadding">@dimen/navigation_item_padding</item>

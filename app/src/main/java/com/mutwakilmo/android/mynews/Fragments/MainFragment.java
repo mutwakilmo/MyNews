@@ -197,7 +197,7 @@ public class MainFragment extends Fragment {
     }
 
     public void callMostPopular() {
-        Call<NYMostPopularResponse> nyMostPopularResponseCall = mNewYorkTimesService.getNYMostPopular(1, BuildConfig.MY_NYT_API_KEY);
+        Call<NYMostPopularResponse> nyMostPopularResponseCall = mNewYorkTimesService.getNYMostPopular(7, BuildConfig.MY_NYT_API_KEY);
         nyMostPopularResponseCall.enqueue(new Callback<NYMostPopularResponse>() {
             @Override
             public void onResponse(Call<NYMostPopularResponse> call, Response<NYMostPopularResponse> response) {

@@ -26,20 +26,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/archivo_black"
                 android:text="MY"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="monospace"
-                android:text="NEWS"
+                android:fontFamily="@font/archivo_black"
+                android:text=" NEWS"
                 android:textColor="#3cff00"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
@@ -55,7 +55,7 @@
             android:elevation="16dp"
             app:tabGravity="fill"
             app:tabIndicator="@drawable/demo"
-            app:tabIndicatorColor="@color/title_text_color"
+            app:tabIndicatorColor="@color/colorPrimary"
             app:tabIndicatorFullWidth="true"
             app:tabIndicatorGravity="stretch"
             app:tabIndicatorHeight="54dp"

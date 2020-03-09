@@ -264,10 +264,16 @@ public class MainActivity extends AppCompatActivity
     private void openSearchActivity(){
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
-        overridePendingTransition(R.anim.slide_in_up,R.anim.slid_out_up);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
     }
 
+    // return to welcome Activity with slide animation
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+    }
 
 
 

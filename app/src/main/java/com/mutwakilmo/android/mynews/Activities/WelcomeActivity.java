@@ -39,5 +39,6 @@ public class WelcomeActivity extends AppCompatActivity {
         Toast.makeText(this, "welcome to MyNews app", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 }
