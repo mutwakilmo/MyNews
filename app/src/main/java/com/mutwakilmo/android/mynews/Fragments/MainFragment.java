@@ -94,12 +94,13 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-      /*  // 4 - Configure the SwipeRefreshLayout
-        this.configureSwipeRefreshLayout();*/
+        //Todo SwipeRefreshLayout
+        // 4 - Configure the SwipeRefreshLayout
+//        this.configureSwipeRefreshLayout();
 
 //        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
 
-        if (getArguments() != null){
+        if (getArguments() != null) {
             String selectedSection = getArguments().getString(NYTConstants.NYT_SECTION_NAME, NYTConstants.NEWS_SECTIONS[0]);
             switch (selectedSection) {
                 case "Most Popular":
@@ -115,18 +116,16 @@ public class MainFragment extends Fragment {
 
     }
 
-   /* // 2 - Configure the SwipeRefreshLayout
-    private void configureSwipeRefreshLayout() {
+    // 2 - Configure the SwipeRefreshLayout
+   /* private void configureSwipeRefreshLayout() {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
 
-                callTopStories();
                 callMostPopular();
             }
         });
-    }
-*/
+    }*/
 
     public void callTopStories(String section) {
         Call<TopStoriesResponse> topStoriesResponseCall;
@@ -179,12 +178,6 @@ public class MainFragment extends Fragment {
                     mTopStoriesResultsItems.addAll(response.body().getResults());
                     mTopStoriesAdapter.notifyDataSetChanged();
                 }
-               /* // Stopping Shimmer Effect's animation after data is loaded to ListView
-                mShimmerViewContainer.stopShimmer();
-                mShimmerViewContainer.setVisibility(View.GONE);*/
-
-
-
 
             }
 
@@ -209,9 +202,7 @@ public class MainFragment extends Fragment {
                     mNYMostPopularResults.addAll(response.body().getResults());
                     mMostPopularAdapter.notifyDataSetChanged();
                 }
-                // Stopping Shimmer Effect's animation after data is loaded to ListView
-//                mShimmerViewContainer.stopShimmer();
-//                mShimmerViewContainer.setVisibility(View.GONE);
+
 
             }
 
@@ -225,18 +216,6 @@ public class MainFragment extends Fragment {
 
     }
 
-
-   /* @Override
-    public void onResume() {
-        super.onResume();
-        mShimmerViewContainer.stopShimmer();
-    }
-
-    @Override
-    public void onPause() {
-        mShimmerViewContainer.stopShimmer();
-        super.onPause();
-    }*/
 
 }
 

@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.mutwakilmo.android.mynews.NewYorkTimesWebViewActivity;
+import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
 
@@ -78,7 +78,6 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
             myIntent.putExtra("websiteUrl", topStoriesResultsItem.getUrl());
             mContext.startActivity(myIntent);
 
-            //    viewHolder.relativeLayout.setBackgroundColor(R.color.colorPrimaryDark);
         });
     }
 

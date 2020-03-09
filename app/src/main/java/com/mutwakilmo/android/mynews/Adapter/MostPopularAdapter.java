@@ -15,8 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.facebook.shimmer.ShimmerFrameLayout;
-import com.mutwakilmo.android.mynews.NewYorkTimesWebViewActivity;
+import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.R;
 
@@ -28,7 +27,8 @@ import java.util.List;
 public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.NewsItemViewHolder> {
     private List<NYMostPopularResult> nyMostPopularResults;
     private Context mContext;
-    ShimmerFrameLayout mShimmerFrameLayout;
+
+
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener {

@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewYorkTimesWebViewActivity"></activity>
+        <activity android:name=".Activities.NewYorkTimesWebViewActivity"
+            android:parentActivityName=".Activities.MainActivity"></activity>
          <!-- A child of the main activity -->
         <activity
             android:name=".Activities.SearchActivity"
