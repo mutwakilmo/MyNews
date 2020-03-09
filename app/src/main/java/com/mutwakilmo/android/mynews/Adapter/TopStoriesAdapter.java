@@ -1,6 +1,7 @@
 package com.mutwakilmo.android.mynews.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.mutwakilmo.android.mynews.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
 
@@ -24,8 +26,15 @@ import java.util.List;
 public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.NewsItemViewHolder> {
     private List<TopStoriesResultsItem> topStoriesResultsItems;
     private Context mContext;
+    private OnItemClickListener mListener;
 
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
 
+    public void view (OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public TopStoriesAdapter(List<TopStoriesResultsItem> topStoriesResultsItems) {
         this.topStoriesResultsItems = topStoriesResultsItems;
@@ -61,6 +70,16 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
                     .placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .into(holder.newsImageView);
+        // -------------------------------------------------------------------------------------
+        //    View.OnClickListener() can be replace with lambada
+        // -------------------------------------------------------------------------------------
+        holder.container.setOnClickListener(view -> {
+            Intent myIntent = new Intent(mContext, NewYorkTimesWebViewActivity.class);
+            myIntent.putExtra("websiteUrl", topStoriesResultsItem.getUrl());
+            mContext.startActivity(myIntent);
+
+            //    viewHolder.relativeLayout.setBackgroundColor(R.color.colorPrimaryDark);
+        });
     }
 
     @Override
@@ -85,6 +104,16 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
             titleTextView = itemView.findViewById(R.id.tv_title);
 
 
+
+            itemView.setOnClickListener(view -> {
+                if (mListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) ;
+                    {
+                        mListener.onItemClick(position);
+                    }
+                }
+            });
         }
     }
 }

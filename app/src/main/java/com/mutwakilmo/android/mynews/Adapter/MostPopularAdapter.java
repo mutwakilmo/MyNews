@@ -2,6 +2,7 @@
 package com.mutwakilmo.android.mynews.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.mutwakilmo.android.mynews.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.R;
 
@@ -27,6 +29,15 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
     private List<NYMostPopularResult> nyMostPopularResults;
     private Context mContext;
     ShimmerFrameLayout mShimmerFrameLayout;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void view (OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public MostPopularAdapter(List<NYMostPopularResult> nyMostPopularResults) {
         this.nyMostPopularResults= nyMostPopularResults;
@@ -50,6 +61,19 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) +"");
         holder.titleTextView.setText(nyMostPopularResult.getTitle() + "");
         holder.sectionTextView.setText(nyMostPopularResult.getSection() +"");
+
+
+        // -------------------------------------------------------------------------------------
+        //    View.OnClickListener() can be replace with lambada
+        // -------------------------------------------------------------------------------------
+
+
+        holder.container.setOnClickListener(view -> {
+            Intent myIntent = new Intent(mContext, NewYorkTimesWebViewActivity.class);
+            myIntent.putExtra("websiteUrl", nyMostPopularResult.getUrl());
+            mContext.startActivity(myIntent);
+            //    viewHolder.relativeLayout.setBackgroundColor(R.color.colorPrimaryDark);
+        });
 
         //Todo subsection
         if (nyMostPopularResult.getMedia().size() > 0 &&  nyMostPopularResult.getMedia().get(0).getMediaMetadata().size()> 0)
@@ -85,6 +109,15 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
             container = itemView.findViewById(R.id.container);
 
 
+            itemView.setOnClickListener(view -> {
+                if (mListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) ;
+                    {
+                        mListener.onItemClick(position);
+                    }
+                }
+            });
 
         }
     }

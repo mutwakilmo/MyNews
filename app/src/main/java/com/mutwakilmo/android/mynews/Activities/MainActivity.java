@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity
      * @param item Item in options menu that was clicked.
      * @return Returns true if the item was Settings.
      */
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

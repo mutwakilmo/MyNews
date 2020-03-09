@@ -15,8 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!-- A child of the main activity -->
+        <activity android:name=".NewYorkTimesWebViewActivity"></activity>
+         <!-- A child of the main activity -->
         <activity
             android:name=".Activities.SearchActivity"
             android:parentActivityName=".Activities.MainActivity">
@@ -26,13 +26,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-
-        <activity android:name=".Activities.MainActivity"></activity>
-        <activity android:name=".Activities.WelcomeActivity" />
-        <!--Launch Activity  -->
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.WelcomeActivity" /> <!-- Launch Activity -->
         <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

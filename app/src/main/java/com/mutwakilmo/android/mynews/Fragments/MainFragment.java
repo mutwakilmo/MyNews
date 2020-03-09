@@ -203,6 +203,9 @@ public class MainFragment extends Fragment {
             public void onResponse(Call<NYMostPopularResponse> call, Response<NYMostPopularResponse> response) {
                 if (response.body() != null) {
                     mNYMostPopularResults.clear();
+                    // -------------------
+                    // UPDATE UI
+                    // -------------------
                     mNYMostPopularResults.addAll(response.body().getResults());
                     mMostPopularAdapter.notifyDataSetChanged();
                 }
