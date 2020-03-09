@@ -116,9 +116,11 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_help:
                 Toast.makeText(this, "Help", Toast.LENGTH_LONG).show();
+                helpActivity();
                 break;
             case R.id.action_about:
                 Toast.makeText(this, "Action", Toast.LENGTH_LONG).show();
+                aboutActivity();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -265,6 +267,22 @@ public class MainActivity extends AppCompatActivity
     private void openSearchActivity(){
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+    }
+
+    //Open AboutActivity
+    private void aboutActivity(){
+        Intent about = new Intent(MainActivity.this, AboutActivity.class);
+        startActivity(about);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+    }
+
+    //Open HelpActivity
+    private void helpActivity(){
+        Intent help = new Intent(MainActivity.this, HelpActivity.class);
+        startActivity(help);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
     }
