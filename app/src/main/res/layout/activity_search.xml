@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".Activities.SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -34,4 +35,211 @@
             android:textSize="20dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:hint="Search query term"
+            tools:ignore="HardcodedText,TextFields"
+            android:importantForAutofill="no"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextSearch"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Begin Date"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="End Date"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editTextLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayoutDate"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/editTextBeginDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="20/02/2017"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
+                android:importantForAutofill="no"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="MM/DD/YY"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
+                android:importantForAutofill="no"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextLL"
+            android:layout_marginTop="30dp"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/artsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Arts"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/politicsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="1"
+                android:text="Politics"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkboxLL1"
+            android:layout_marginTop="30dp"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/businessCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Business"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/sportsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sports"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkboxLL2"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="30dp"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/entrepreneursCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Entrepreneurs"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/travelCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
+                android:text="Travel"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkboxLL3"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:text="Search"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textScaleX="1"
+            android:fontFamily="@font/alfa_slab_one"
+            android:background="@drawable/button_corner"
+            tools:ignore="HardcodedText" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imageView4"
+            android:layout_width="414dp"
+            android:layout_height="267dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_marginBottom="0dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/searchhipster" />
+
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>
