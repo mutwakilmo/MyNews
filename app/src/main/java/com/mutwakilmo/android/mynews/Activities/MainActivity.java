@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_notifications:
                 Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
+                notificationsActivity();
                 break;
             case R.id.action_help:
                 Toast.makeText(this, "Help", Toast.LENGTH_LONG).show();
@@ -283,6 +284,14 @@ public class MainActivity extends AppCompatActivity
     private void helpActivity(){
         Intent help = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(help);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+    }
+
+    //Open Notifications
+    private void notificationsActivity(){
+        Intent notifications = new Intent(MainActivity.this, NotificationsActivity.class);
+        startActivity(notifications);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
     }

@@ -5,7 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.AboutActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/archivo_black"
+            android:text="MY"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/archivo_black"
+            android:text=" NEWS"
+            android:textColor="#3cff00"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="409dp"
@@ -39,6 +66,7 @@
         android:fontFamily="@font/lobster"
         android:maxLines="2"
         android:onClick="onClickOpenClassrooms"
+
 
         android:text="OpenClassrooms Project 7 : An Android news app that fetches news from The New York Times API. "
         android:textColor="@color/content_text_color"

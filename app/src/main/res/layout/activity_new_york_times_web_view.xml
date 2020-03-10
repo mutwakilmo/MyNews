@@ -12,28 +12,27 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:titleTextColor="@android:color/white">
-        <!--Custom app name color -->
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/archivo_black"
             android:text="MY"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="monospace"
-            android:text="NEWS"
+            android:fontFamily="@font/archivo_black"
+            android:text=" NEWS"
             android:textColor="#3cff00"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
-
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
