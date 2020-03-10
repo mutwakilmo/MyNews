@@ -2,9 +2,9 @@ package com.mutwakilmo.android.mynews.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,8 +12,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.Objects;
-
-import static android.R.id.home;
 
 public class NewYorkTimesWebViewActivity extends AppCompatActivity {
     private WebView mWebView;
@@ -27,7 +25,7 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
 
         Intent myIntent = getIntent();
         String websiteUrl = Objects.requireNonNull(myIntent.getExtras()).getString("websiteUrl");
-        // Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
+       Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
 
 
 
@@ -45,13 +43,7 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case home: finish();
-        }
-        return true;
-    }
+
 
     private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);

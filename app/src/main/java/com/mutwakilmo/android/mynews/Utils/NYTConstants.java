@@ -8,7 +8,7 @@ public final class NYTConstants {
     public static final String[] NEWS_SECTIONS = {
             "Top Stories", "Most Popular", "Technology",
             "Business", "Sport", "Travel", "Fashion",
-            "Science", "Automobiles", "Theatre", "Arts",
+            "Science", "Automobiles", "Politics", "Arts",
             "World", "Health", "Food"
     };
 

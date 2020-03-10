@@ -32,6 +32,10 @@ public class AboutActivity extends AppCompatActivity {
         String oc = "https://openclassrooms.com/en/";
         openWebPage(oc);
     }
+    public void onClickMyLinkedin(View view) {
+        String linkedin = "https://www.linkedin.com/in/mutwakil-mo/";
+        openWebPage(linkedin);
+    }
 
     private void openWebPage(String url) {
         // Use Uri.parse to parse the String into a Uri
@@ -58,6 +62,7 @@ public class AboutActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
 
 
 }

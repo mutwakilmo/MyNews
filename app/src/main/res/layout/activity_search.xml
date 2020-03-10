@@ -43,14 +43,18 @@
         <EditText
             android:id="@+id/editTextSearch"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
             android:hint="Search query term"
             tools:ignore="HardcodedText,TextFields"
             android:importantForAutofill="no"
-            tools:targetApi="o" />
+            tools:targetApi="o"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/search_input_style"
+            android:drawableLeft="@drawable/ic_search_gray_24dp"/>
 
         <LinearLayout
             android:id="@+id/linearLayoutDate"
@@ -227,7 +231,7 @@
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/imageView4"
             android:layout_width="414dp"
-            android:layout_height="267dp"
+            android:layout_height="198dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="0dp"

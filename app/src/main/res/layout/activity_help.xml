@@ -12,8 +12,10 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_scrollFlags="scroll"
-        app:titleTextColor="@android:color/white">
+        app:titleTextColor="@android:color/white"
+        tools:layout_editor_absoluteX="-2dp">
         <!--Custom app name color -->
         <TextView
             android:id="@+id/toolbar_title"
