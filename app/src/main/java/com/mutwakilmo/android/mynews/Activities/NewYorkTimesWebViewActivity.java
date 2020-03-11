@@ -25,8 +25,8 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
 
         Intent myIntent = getIntent();
         String websiteUrl = Objects.requireNonNull(myIntent.getExtras()).getString("websiteUrl");
-       Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
-
+       // Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "It's Time to Read!\uD83E\uDD71\uD83D\uDC53", Toast.LENGTH_SHORT).show();
 
 
         mWebView = findViewById(R.id.webView);
@@ -43,6 +43,7 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
 
 
     private void setActionBar(Toolbar toolbar) {

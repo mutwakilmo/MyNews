@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity
     //SetupTabs
     private void setupTabs() {
         mViewPager = findViewById(R.id.viewpager);
-        ViewPagerAdapter viewPagerAdapter =new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager.setAdapter(viewPagerAdapter);
         mTabLayout = findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
@@ -265,44 +265,43 @@ public class MainActivity extends AppCompatActivity
     }
 
     //Open SearchActivity
-    private void openSearchActivity(){
+    private void openSearchActivity() {
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 
     //Open AboutActivity
-    private void aboutActivity(){
+    private void aboutActivity() {
         Intent about = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(about);
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 
     //Open HelpActivity
-    private void helpActivity(){
+    private void helpActivity() {
         Intent help = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(help);
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 
     //Open Notifications
-    private void notificationsActivity(){
+    private void notificationsActivity() {
         Intent notifications = new Intent(MainActivity.this, NotificationsActivity.class);
         startActivity(notifications);
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
     }
 
     // return to welcome Activity with slide animation
     @Override
-    public void finish(){
+    public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
-
 
 
 }

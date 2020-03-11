@@ -19,19 +19,21 @@ public class AboutActivity extends AppCompatActivity {
 
 
     @Override
-    public void finish(){
+    public void finish() {
         super.finish();
-        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     public void onClickOpenWebpageButton(View view) {
         String urlAsString = "https://play.google.com/store/apps/dev?id=8103420999836613602&hl=en";
         openWebPage(urlAsString);
     }
+
     public void onClickOpenClassrooms(View view) {
         String oc = "https://openclassrooms.com/en/";
         openWebPage(oc);
     }
+
     public void onClickMyLinkedin(View view) {
         String linkedin = "https://www.linkedin.com/in/mutwakil-mo/";
         openWebPage(linkedin);
@@ -62,7 +64,6 @@ public class AboutActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
 
 
 }

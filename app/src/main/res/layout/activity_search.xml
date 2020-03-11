@@ -25,6 +25,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
             android:textColor="#3cff00"
             android:textSize="20dp"
             android:textStyle="bold" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
@@ -47,14 +49,14 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="60dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/search_input_style"
+            android:drawableLeft="@drawable/ic_search_gray_24dp"
             android:hint="Search query term"
-            tools:ignore="HardcodedText,TextFields"
             android:importantForAutofill="no"
-            tools:targetApi="o"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:background="@drawable/search_input_style"
-            android:drawableLeft="@drawable/ic_search_gray_24dp"/>
+            tools:ignore="HardcodedText,TextFields"
+            tools:targetApi="o" />
 
         <LinearLayout
             android:id="@+id/linearLayoutDate"
@@ -101,8 +103,8 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="20/02/2017"
-                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 android:importantForAutofill="no"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 tools:targetApi="o" />
 
             <EditText
@@ -115,8 +117,8 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="MM/DD/YY"
-                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 android:importantForAutofill="no"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 tools:targetApi="o" />
 
         </LinearLayout>
@@ -136,17 +138,17 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:text="Arts"
-                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 tools:ignore="HardcodedText" />
 
             <CheckBox
                 android:id="@+id/politicsCB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
                 android:layout_weight="1"
                 android:text="Politics"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
@@ -166,8 +168,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:text="Business"
-                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 tools:ignore="HardcodedText" />
 
             <CheckBox
@@ -176,8 +178,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sports"
-                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -186,18 +188,18 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/checkboxLL2"
-            android:textColor="@color/colorPrimary"
             android:layout_marginTop="30dp"
+            android:textColor="@color/colorPrimary"
             android:weightSum="2">
 
             <CheckBox
                 android:id="@+id/entrepreneursCB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
                 android:layout_marginStart="20dp"
                 android:layout_weight="1"
                 android:text="Entrepreneurs"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText" />
 
@@ -206,8 +208,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/colorPrimary"
                 android:text="Travel"
+                android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
@@ -220,12 +222,10 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:text="Search"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textScaleX="1"
-            android:fontFamily="@font/alfa_slab_one"
             android:background="@drawable/button_corner"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="Search"
+            android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <com.airbnb.lottie.LottieAnimationView
@@ -243,7 +243,6 @@
 
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>
