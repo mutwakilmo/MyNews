@@ -2,6 +2,7 @@ package com.mutwakilmo.android.mynews.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -23,6 +24,8 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    // Class name for Log tag
+    public static final String TAG_LOG_MAIN = MainActivity.class.getSimpleName();
 
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG_LOG_MAIN, "onCreate: ");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setActionBar(toolbar);
 

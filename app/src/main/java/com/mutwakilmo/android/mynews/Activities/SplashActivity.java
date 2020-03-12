@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
 
     //Todo 1 create splash launch Activity (lottie animation)
     //Todo 2 create welcome Activity
-    
+
     //Todo 3 Main Fragment
     //Todo 4 Tab layout and viewPager
 
@@ -46,7 +46,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
     // Class name for Log tag
-    public static final String LOG_TAG = SplashActivity.class.getSimpleName();
+    public static final String LOG_TAG_SPLASH = SplashActivity.class.getSimpleName();
     //Duration of wait
     private final int SPLASH_DISPLAY_LENGHT = 8000;
 
@@ -58,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         // Log the start of the onCreate() method
-        Log.d(LOG_TAG, "onCreate");
+        Log.d(LOG_TAG_SPLASH, "onCreate");
         //Initialize ButterKnife
         ButterKnife.bind(this);
         openWelcomeActivity();
@@ -71,6 +71,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 Intent intent = new Intent(SplashActivity.this, WelcomeActivity.class);
                 startActivity(intent);
                 finish();

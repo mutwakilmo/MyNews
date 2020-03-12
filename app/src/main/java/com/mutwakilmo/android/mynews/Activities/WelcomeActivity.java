@@ -16,7 +16,7 @@ import butterknife.OnClick;
 
 public class WelcomeActivity extends AppCompatActivity {
     // Class name for Log tag
-    public static final String LOG_TAG = WelcomeActivity.class.getSimpleName();
+    public static final String LOG_TAG_WELCOME = WelcomeActivity.class.getSimpleName();
 
     @BindView(R.id.animation_view1)
     LottieAnimationView animationView1;
@@ -29,13 +29,13 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        Log.d(LOG_TAG, "onCreate");
+        Log.d(LOG_TAG_WELCOME, "onCreate");
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.start_btn)
     public void onViewClicked() {
-        Log.d(LOG_TAG, "onViewClicked: Welcome start btn");
+        Log.d(LOG_TAG_WELCOME, "onViewClicked: Welcome start btn");
         Toast.makeText(this, "welcome to MyNews app", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

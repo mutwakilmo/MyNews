@@ -3,6 +3,7 @@ package com.mutwakilmo.android.mynews.Activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +12,14 @@ import com.mutwakilmo.android.mynews.R;
 
 public class AboutActivity extends AppCompatActivity {
 
+    // Class name for Log tag
+    public static final String LOG_TAG_ABOUT = AboutActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        Log.d(LOG_TAG_ABOUT, "onCreate: ");
     }
 
 
