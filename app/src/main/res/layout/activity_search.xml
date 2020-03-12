@@ -226,6 +226,8 @@
             android:fontFamily="@font/alfa_slab_one"
             android:text="Search"
             android:textStyle="bold"
+            android:textColor="#3cff00"
+            android:letterSpacing="0.1"
             tools:ignore="HardcodedText" />
 
         <com.airbnb.lottie.LottieAnimationView

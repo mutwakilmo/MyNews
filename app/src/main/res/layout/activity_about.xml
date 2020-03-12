@@ -76,6 +76,7 @@
         android:text="OpenClassrooms Project 7 : An Android news app that fetches news from The New York Times API. "
         android:textColor="@color/content_text_color"
         android:textSize="15dp"
+        android:textColorLink="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

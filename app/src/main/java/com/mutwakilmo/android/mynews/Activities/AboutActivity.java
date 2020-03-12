@@ -5,21 +5,45 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.mutwakilmo.android.mynews.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AboutActivity extends AppCompatActivity {
 
     // Class name for Log tag
     public static final String LOG_TAG_ABOUT = AboutActivity.class.getSimpleName();
+    @BindView(R.id.toolbar_title)
+    TextView toolbarTitle;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.imageView)
+    ImageView imageView;
+    @BindView(R.id.imageView2)
+    LottieAnimationView imageView2;
+    @BindView(R.id.textView)
+    TextView textView;
+    @BindView(R.id.textView2)
+    TextView textView2;
+    @BindView(R.id.imageView7)
+    LottieAnimationView imageView7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        ButterKnife.bind(this);
         Log.d(LOG_TAG_ABOUT, "onCreate: ");
+
     }
 
 
@@ -29,20 +53,6 @@ public class AboutActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
-    public void onClickOpenWebpageButton(View view) {
-        String urlAsString = "https://play.google.com/store/apps/dev?id=8103420999836613602&hl=en";
-        openWebPage(urlAsString);
-    }
-
-    public void onClickOpenClassrooms(View view) {
-        String oc = "https://openclassrooms.com/en/";
-        openWebPage(oc);
-    }
-
-    public void onClickMyLinkedin(View view) {
-        String linkedin = "https://www.linkedin.com/in/mutwakil-mo/";
-        openWebPage(linkedin);
-    }
 
     private void openWebPage(String url) {
         // Use Uri.parse to parse the String into a Uri
@@ -71,4 +81,21 @@ public class AboutActivity extends AppCompatActivity {
     }
 
 
+    @OnClick(R.id.imageView2)
+    public void onClickOpenWebpageButton(View view) {
+        String urlAsString = "https://play.google.com/store/apps/dev?id=8103420999836613602&hl=en";
+        openWebPage(urlAsString);
+    }
+
+    @OnClick(R.id.textView)
+    public void onClickOpenClassrooms(View view) {
+        String oc = "https://openclassrooms.com/en/";
+        openWebPage(oc);
+    }
+
+    @OnClick(R.id.textView2)
+    public void onClickMyLinkedin(View view) {
+        String linkedin = "https://www.linkedin.com/in/mutwakil-mo/";
+        openWebPage(linkedin);
+    }
 }
