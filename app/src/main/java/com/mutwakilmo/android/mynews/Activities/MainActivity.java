@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.tab_layout)
-    TabLayout  mTabLayout;
+    TabLayout mTabLayout;
     @BindView(R.id.viewpager)
-    ViewPager  mViewPager;
+    ViewPager mViewPager;
     @BindView(R.id.nav_view)
     NavigationView navigationView;
     @BindView(R.id.drawer_layout)
@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity
         }
 
         setupTabs();
+
+
     }
 
     private void setActionBar(Toolbar toolbar) {
@@ -266,6 +268,12 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.books));
                 return true;
+            case R.id.nav_realestate:
+                mViewPager.setCurrentItem(16);
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.books));
+                return true;
             default:
                 return false;
         }
@@ -329,6 +337,8 @@ public class MainActivity extends AppCompatActivity
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+
+
 
 
 }
