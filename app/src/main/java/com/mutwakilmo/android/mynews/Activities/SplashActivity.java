@@ -14,6 +14,36 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
+    /*Todo App Overview todo*/
+
+    //Todo 1 create splash launch Activity (lottie animation)
+    //Todo 2 create welcome Activity
+    
+    //Todo 3 Main Fragment
+    //Todo 4 Tab layout and viewPager
+
+    //Todo 5 retrofit and NY apis (NewYorkTimes Service)
+    //Todo 6 NY Models
+
+    //Todo 7 Navigation drawer
+    //Todo 8 Custom and design MyNews app logo and navigation drawer and tab fragment
+    //Todo 9 ViewPager adapter and MostPopular adapter and TopStories adapter
+    //Todo 10 Implement animation for the adapter while scroll
+    //Todo Implement animation when I navigate through Activities
+    //Todo 11 Download Google font
+    //Todo 12 create SearchActivity
+    //Todo 13 create AboutActivity
+    //Todo 14 create HelpActivity
+    //Todo 15 create NotificationActivity
+
+    //Todo 16 Test MyNews app
+    //Todo 17 Implement CircleCI (is a Leader in cloud-native continuous integration)
+
+    //Todo 18 Support different ScreenSize
+    //Todo SwipeRefreshLayout (Configure the SwipeRefreshLayout)
+    //Todo  Implement Android Architecture Patterns  Model-View-Controller
+
+
 
     // Class name for Log tag
     public static final String LOG_TAG = SplashActivity.class.getSimpleName();

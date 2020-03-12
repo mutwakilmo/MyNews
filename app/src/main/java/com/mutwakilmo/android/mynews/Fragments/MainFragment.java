@@ -94,8 +94,7 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        //Todo SwipeRefreshLayout
-        // 4 - Configure the SwipeRefreshLayout
+
 //        this.configureSwipeRefreshLayout();
 
 //        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
