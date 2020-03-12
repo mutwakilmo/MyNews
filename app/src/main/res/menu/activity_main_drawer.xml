@@ -72,6 +72,14 @@
             android:id="@+id/nav_food"
             android:icon="@drawable/ic_food_black_24dp"
             android:title="@string/food" />
+        <item
+        android:id="@+id/nav_movies"
+       android:icon="@drawable/ic_local_movies_black_24dp"
+        android:title="@string/movies" />
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/books" />
     </group>
 
 

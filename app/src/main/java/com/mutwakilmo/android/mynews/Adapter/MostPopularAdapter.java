@@ -15,11 +15,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Mutwakil Mo🐮🐮🐮 on 04/03/2020
@@ -35,12 +39,12 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         void onItemClick(int position);
     }
 
-    public void view (OnItemClickListener listener) {
+    public void view(OnItemClickListener listener) {
         mListener = listener;
     }
 
     public MostPopularAdapter(List<NYMostPopularResult> nyMostPopularResults) {
-        this.nyMostPopularResults= nyMostPopularResults;
+        this.nyMostPopularResults = nyMostPopularResults;
     }
 
     @NonNull
@@ -57,10 +61,10 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
         NYMostPopularResult nyMostPopularResult = nyMostPopularResults.get(position);
 
-        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation));
-        holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) +"");
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
+        holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) + "");
         holder.titleTextView.setText(nyMostPopularResult.getTitle() + "");
-        holder.sectionTextView.setText(nyMostPopularResult.getSection() +"");
+        holder.sectionTextView.setText(nyMostPopularResult.getSection() + "");
 
 
         // -------------------------------------------------------------------------------------
@@ -76,7 +80,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
         });
 
         //Todo subsection
-        if (nyMostPopularResult.getMedia().size() > 0 &&  nyMostPopularResult.getMedia().get(0).getMediaMetadata().size()> 0)
+        if (nyMostPopularResult.getMedia().size() > 0 && nyMostPopularResult.getMedia().get(0).getMediaMetadata().size() > 0)
             Glide.with(mContext)
                     .load(nyMostPopularResult.getMedia().get(0).getMediaMetadata().get(0).getUrl())
                     .fallback(R.mipmap.ic_launcher)
@@ -95,20 +99,23 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
 
     public class NewsItemViewHolder extends RecyclerView.ViewHolder {
-        ImageView newsImageView;
+        @BindView(R.id.img_news)
+        KenBurnsView newsImageView;
+        @BindView(R.id.tv_section)
         TextView sectionTextView;
+        @BindView(R.id.tv_date)
         TextView dateTextView;
+        @BindView(R.id.tv_title)
         TextView titleTextView;
+        @BindView(R.id.imageView5)
+        ImageView imageView5;
+        @BindView(R.id.container)
         RelativeLayout container;
+
         public NewsItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            newsImageView = itemView.findViewById(R.id.img_news);
-            sectionTextView = itemView.findViewById(R.id.tv_section);
-            dateTextView = itemView.findViewById(R.id.tv_date);
-            titleTextView = itemView.findViewById(R.id.tv_title);
-            container = itemView.findViewById(R.id.container);
-
-
+            // //Initialize ButterKnife
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(view -> {
                 if (mListener != null) {
                     int position = getAdapterPosition();

@@ -30,6 +30,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         Log.d(LOG_TAG_WELCOME, "onCreate");
+        //Initialize ButterKnife
         ButterKnife.bind(this);
     }
 

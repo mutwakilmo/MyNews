@@ -165,6 +165,12 @@ public class MainFragment extends Fragment {
             case "Food":
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("food", BuildConfig.MY_NYT_API_KEY);
                 break;
+            case "Movies":
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("movies", BuildConfig.MY_NYT_API_KEY);
+                break;
+            case "Books":
+                topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("books", BuildConfig.MY_NYT_API_KEY);
+                break;
 
             default:
                 topStoriesResponseCall = mNewYorkTimesService.getNYTopStories("home", BuildConfig.MY_NYT_API_KEY);

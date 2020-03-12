@@ -44,23 +44,24 @@ public class SplashActivity extends AppCompatActivity {
     //Todo  Implement Android Architecture Patterns  Model-View-Controller
 
 
-
     // Class name for Log tag
     public static final String LOG_TAG_SPLASH = SplashActivity.class.getSimpleName();
     //Duration of wait
     private final int SPLASH_DISPLAY_LENGHT = 8000;
-
     @BindView(R.id.animation_view)
     LottieAnimationView animationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        // Log the start of the onCreate() method
-        Log.d(LOG_TAG_SPLASH, "onCreate");
         //Initialize ButterKnife
         ButterKnife.bind(this);
+        // Log the start of the onCreate() method
+        Log.d(LOG_TAG_SPLASH, "onCreate");
+
+
         openWelcomeActivity();
     }
 

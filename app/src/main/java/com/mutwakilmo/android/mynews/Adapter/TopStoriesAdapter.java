@@ -14,11 +14,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
 import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Mutwakil Mo🐮🐮🐮 on 04/03/2020
@@ -32,7 +36,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
         void onItemClick(int position);
     }
 
-    public void view (OnItemClickListener listener) {
+    public void view(OnItemClickListener listener) {
         mListener = listener;
     }
 
@@ -54,14 +58,14 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
         TopStoriesResultsItem topStoriesResultsItem = topStoriesResultsItems.get(position);
 
         // lets create the animation for the whole card
-        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation));
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
         holder.dateTextView.setText(topStoriesResultsItem.getPublishedDate().substring(0, 10) + ""); // 20/01/2019
         if (topStoriesResultsItem.getSubsection() != null && !topStoriesResultsItem.getSubsection().isEmpty())
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + " > " + topStoriesResultsItem.getSubsection());
         else
 
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + "");
-            holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
+        holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
 
         if (topStoriesResultsItem.getMultimedia().size() > 0)
             Glide.with(mContext)
@@ -88,21 +92,25 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
     }
 
     public class NewsItemViewHolder extends RecyclerView.ViewHolder {
-        ImageView newsImageView;
+        @BindView(R.id.img_news)
+        KenBurnsView newsImageView;
+        @BindView(R.id.tv_section)
         TextView sectionTextView;
+        @BindView(R.id.tv_date)
         TextView dateTextView;
+        @BindView(R.id.tv_title)
         TextView titleTextView;
+        @BindView(R.id.imageView5)
+        ImageView imageView5;
+        @BindView(R.id.container)
         RelativeLayout container;
+
 
         public NewsItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            container = itemView.findViewById(R.id.container);
-            newsImageView = itemView.findViewById(R.id.img_news);
-            sectionTextView = itemView.findViewById(R.id.tv_section);
-            dateTextView = itemView.findViewById(R.id.tv_date);
-            titleTextView = itemView.findViewById(R.id.tv_title);
 
-
+            // //Initialize ButterKnife
+            ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(view -> {
                 if (mListener != null) {

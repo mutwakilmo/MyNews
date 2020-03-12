@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".Activities.NewYorkTimesWebViewActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -33,15 +34,29 @@
             android:textSize="25dp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="675dp"
+        android:layout_height="646dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="85dp"
         android:layout_marginEnd="0dp">
 
     </WebView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/imageView9"
+        android:layout_width="41dp"
+        android:layout_height="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="184dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/mutwakil" />
 
 </RelativeLayout>

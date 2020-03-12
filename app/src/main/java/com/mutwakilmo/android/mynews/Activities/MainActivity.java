@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -22,13 +23,28 @@ import com.mutwakilmo.android.mynews.R;
 
 import java.util.Objects;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     // Class name for Log tag
     public static final String TAG_LOG_MAIN = MainActivity.class.getSimpleName();
 
-    private ViewPager mViewPager;
-    private TabLayout mTabLayout;
+    @BindView(R.id.toolbar_title)
+    TextView toolbarTitle;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.tab_layout)
+    TabLayout  mTabLayout;
+    @BindView(R.id.viewpager)
+    ViewPager  mViewPager;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+
 
 
     /**
@@ -41,12 +57,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Log.d(TAG_LOG_MAIN, "onCreate: ");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setActionBar(toolbar);
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
@@ -55,7 +70,6 @@ public class MainActivity extends AppCompatActivity
         }
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null) {
             navigationView.setNavigationItemSelectedListener(this);
         }
@@ -74,7 +88,6 @@ public class MainActivity extends AppCompatActivity
      */
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer != null) {
             if (drawer.isDrawerOpen(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START);
@@ -143,7 +156,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_topstories:
@@ -242,7 +254,18 @@ public class MainActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.food));
                 return true;
-
+            case R.id.nav_movies:
+                mViewPager.setCurrentItem(14);
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.movies));
+                return true;
+            case R.id.nav_books:
+                mViewPager.setCurrentItem(15);
+                // Handle the send action (for now display a toast).
+                drawer.closeDrawer(GravityCompat.START);
+                displayToast(getString(R.string.books));
+                return true;
             default:
                 return false;
         }
