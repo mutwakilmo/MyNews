@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the camera import action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.topstories));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Top Stories");
                 return true;
 
             case R.id.nav_mostpopular:
@@ -172,6 +173,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the gallery action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.mostpopular));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Most Popular");
                 return true;
 
             case R.id.nav_technology:
@@ -179,6 +181,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the slideshow action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.technology));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Technology");
                 return true;
 
             case R.id.nav_business:
@@ -186,6 +189,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the tools action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.business));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Business");
                 return true;
 
             case R.id.nav_sports:
@@ -193,6 +197,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the share action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.sport));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Sports");
                 return true;
 
             case R.id.nav_travel:
@@ -207,6 +212,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.fashion));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Fashion ");
                 return true;
 
             case R.id.nav_science:
@@ -214,6 +220,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.science));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected:  Science ");
                 return true;
 
             case R.id.nav_automobiles:
@@ -221,12 +228,14 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.automobiles));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Automobiles");
                 return true;
             case R.id.nav_politics:
                 mViewPager.setCurrentItem(9);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.politics));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Politics");
                 return true;
 
             case R.id.nav_arts:
@@ -234,6 +243,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.arts));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Arts");
                 return true;
 
             case R.id.nav_world:
@@ -241,6 +251,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.world));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: World");
                 return true;
 
             case R.id.nav_health:
@@ -248,6 +259,7 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.health));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Health");
                 return true;
 
             case R.id.nav_food:
@@ -255,24 +267,28 @@ public class MainActivity extends AppCompatActivity
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.food));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Food");
                 return true;
             case R.id.nav_movies:
                 mViewPager.setCurrentItem(14);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.movies));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Movies");
                 return true;
             case R.id.nav_books:
                 mViewPager.setCurrentItem(15);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
                 displayToast(getString(R.string.books));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: Books");
                 return true;
             case R.id.nav_realestate:
                 mViewPager.setCurrentItem(16);
                 // Handle the send action (for now display a toast).
                 drawer.closeDrawer(GravityCompat.START);
-                displayToast(getString(R.string.books));
+                displayToast(getString(R.string.realestate));
+                Log.d(TAG_LOG_MAIN, "onNavigationItemSelected: realEstate");
                 return true;
             default:
                 return false;
@@ -290,13 +306,9 @@ public class MainActivity extends AppCompatActivity
 
     //SetupTabs
     private void setupTabs() {
-        mViewPager = findViewById(R.id.viewpager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager.setAdapter(viewPagerAdapter);
-        mTabLayout = findViewById(R.id.tab_layout);
         mTabLayout.setupWithViewPager(mViewPager);
-
-
     }
 
     //Open SearchActivity
@@ -304,6 +316,7 @@ public class MainActivity extends AppCompatActivity
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        Log.d(TAG_LOG_MAIN, "openSearchActivity: openSearchActivity");
 
     }
 
@@ -312,7 +325,7 @@ public class MainActivity extends AppCompatActivity
         Intent about = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(about);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
+        Log.d(TAG_LOG_MAIN, "aboutActivity: OpenAboutActivity");
     }
 
     //Open HelpActivity
@@ -320,6 +333,7 @@ public class MainActivity extends AppCompatActivity
         Intent help = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(help);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        Log.d(TAG_LOG_MAIN, "helpActivity: OpenHelpActivity");
 
     }
 
@@ -328,6 +342,7 @@ public class MainActivity extends AppCompatActivity
         Intent notifications = new Intent(MainActivity.this, NotificationsActivity.class);
         startActivity(notifications);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        Log.d(TAG_LOG_MAIN, "notificationsActivity: openNotificationsActivity");
 
     }
 
@@ -337,8 +352,5 @@ public class MainActivity extends AppCompatActivity
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
-
-
-
 
 }
