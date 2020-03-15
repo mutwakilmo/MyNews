@@ -16,10 +16,10 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.mutwakilmo.android.mynews.Adapter.MostPopularAdapter;
 import com.mutwakilmo.android.mynews.Adapter.TopStoriesAdapter;
 import com.mutwakilmo.android.mynews.BuildConfig;
-import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResponse;
-import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
-import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResponse;
-import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResponse;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResult;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResponse;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResultsItem;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.NYTConstants;
 import com.mutwakilmo.android.mynews.Utils.NewYorkTimesService;
@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -83,10 +84,13 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // 4 - Configure the SwipeRefreshLayout
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+        //Initialize ButterKnife
+        ButterKnife.bind(this, view);
         mTopStoriesAdapter = new TopStoriesAdapter(mTopStoriesResultsItems);
         mMostPopularAdapter = new MostPopularAdapter(mNYMostPopularResults);
 
@@ -95,36 +99,18 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-//        this.configureSwipeRefreshLayout();
 
-//        mShimmerViewContainer = view.findViewById(R.id.shimmer_view_container);
+        loadDataWithR();
+        //  Configure the SwipeRefreshLayout
+        this.configureSwipeRefreshLayout();
 
-        if (getArguments() != null) {
-            String selectedSection = getArguments().getString(NYTConstants.NYT_SECTION_NAME, NYTConstants.NEWS_SECTIONS[0]);
-            switch (selectedSection) {
-                case "Most Popular":
-                    myNewsRecyclerView.setAdapter(mMostPopularAdapter);
-                    callMostPopular();
-                    break;
-                default:
-                    myNewsRecyclerView.setAdapter(mTopStoriesAdapter);
-                    callTopStories(selectedSection);
-            }
-        }
         return view;
-
     }
 
-    // 2 - Configure the SwipeRefreshLayout
-   /* private void configureSwipeRefreshLayout() {
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
+    private void configureSwipeRefreshLayout() {
+        swipeRefreshLayout.setOnRefreshListener(this::loadDataWithR);
+    }
 
-                callMostPopular();
-            }
-        });
-    }*/
 
     public void callTopStories(String section) {
         Call<TopStoriesResponse> topStoriesResponseCall;
@@ -185,6 +171,7 @@ public class MainFragment extends Fragment {
                 if (response.body() != null) {
                     mTopStoriesResultsItems.addAll(response.body().getResults());
                     mTopStoriesAdapter.notifyDataSetChanged();
+                    swipeRefreshLayout.setRefreshing(false);
                 }
 
             }
@@ -209,6 +196,7 @@ public class MainFragment extends Fragment {
                     // -------------------
                     mNYMostPopularResults.addAll(response.body().getResults());
                     mMostPopularAdapter.notifyDataSetChanged();
+                    swipeRefreshLayout.setRefreshing(false);
                 }
 
 
@@ -224,6 +212,21 @@ public class MainFragment extends Fragment {
 
     }
 
+    private void loadDataWithR() {
+
+        if (getArguments() != null) {
+            String selectedSection = getArguments().getString(NYTConstants.NYT_SECTION_NAME, NYTConstants.NEWS_SECTIONS[0]);
+            switch (selectedSection) {
+                case "Most Popular":
+                    myNewsRecyclerView.setAdapter(mMostPopularAdapter);
+                    callMostPopular();
+                    break;
+                default:
+                    myNewsRecyclerView.setAdapter(mTopStoriesAdapter);
+                    callTopStories(selectedSection);
+            }
+        }
+    }
 
 }
 

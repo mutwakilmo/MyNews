@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews.New_York_Times_Top_Stories;
+package com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories;
 
 import com.google.gson.annotations.SerializedName;
 /**

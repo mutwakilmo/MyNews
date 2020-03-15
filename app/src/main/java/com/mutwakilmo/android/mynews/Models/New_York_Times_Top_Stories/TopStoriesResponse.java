@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews.New_York_Times_Top_Stories;
+package com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -50,11 +50,11 @@ public class TopStoriesResponse{
 		return section;
 	}
 
-	public void setResults(List<com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem> results){
+	public void setResults(List<com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResultsItem> results){
 		this.results = results;
 	}
 
-	public List<com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResultsItem> getResults(){
+	public List<com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResultsItem> getResults(){
 		return results;
 	}
 

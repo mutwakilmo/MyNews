@@ -1,5 +1,5 @@
 
-package com.mutwakilmo.android.mynews.New_York_Times_Most_Popular;
+package com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

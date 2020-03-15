@@ -1,5 +1,5 @@
 
-package com.mutwakilmo.android.mynews.New_York_Times_Most_Popular;
+package com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -28,7 +28,7 @@ public class Medium {
     private Integer approvedForSyndication;
     @SerializedName("media-metadata")
     @Expose
-    private List<com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.MediaMetadatum> mediaMetadata = null;
+    private List<com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.MediaMetadatum> mediaMetadata = null;
 
     public String getType() {
         return type;
@@ -70,11 +70,11 @@ public class Medium {
         this.approvedForSyndication = approvedForSyndication;
     }
 
-    public List<com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.MediaMetadatum> getMediaMetadata() {
+    public List<com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.MediaMetadatum> getMediaMetadata() {
         return mediaMetadata;
     }
 
-    public void setMediaMetadata(List<com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.MediaMetadatum> mediaMetadata) {
+    public void setMediaMetadata(List<com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.MediaMetadatum> mediaMetadata) {
         this.mediaMetadata = mediaMetadata;
     }
 

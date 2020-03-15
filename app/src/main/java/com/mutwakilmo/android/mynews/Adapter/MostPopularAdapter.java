@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
-import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResult;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResult;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.mutwakilmo.android.mynews.Utils;
 
-import com.mutwakilmo.android.mynews.New_York_Times_Most_Popular.NYMostPopularResponse;
-import com.mutwakilmo.android.mynews.New_York_Times_Top_Stories.TopStoriesResponse;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResponse;
+import com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResponse;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
