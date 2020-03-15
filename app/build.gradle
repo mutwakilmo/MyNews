@@ -81,5 +81,8 @@ dependencies {
     // Gradle dependency on Shimmer for Android
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
+    //StyleableToast
+    implementation 'com.muddzdev:styleabletoast:2.2.3'
+
 
 }

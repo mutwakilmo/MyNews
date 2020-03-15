@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.mutwakilmo.android.mynews.Adapter.ViewPagerAdapter;
 import com.mutwakilmo.android.mynews.R;
 
@@ -127,19 +127,26 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.action_search:
-                Toast.makeText(this, "You Can Search Your Favorite Article", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "You Can Search Your Favorite Article", Toast.LENGTH_SHORT).show();
+                StyleableToast.makeText(this, "You Can Search Your Favorite Article From MyNews app", R.style.mytoast).show();
+
                 openSearchActivity();
                 break;
             case R.id.action_notifications:
-                Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
+               // Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
+                StyleableToast.makeText(this, "Notifications From MyNews app", R.style.mytoast).show();
                 notificationsActivity();
                 break;
             case R.id.action_help:
-                Toast.makeText(this, "Help", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Help", Toast.LENGTH_LONG).show();
+                StyleableToast.makeText(this, "Help", R.style.mytoast).show();
+
                 helpActivity();
                 break;
             case R.id.action_about:
-                Toast.makeText(this, "Action", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Action", Toast.LENGTH_LONG).show();
+                StyleableToast.makeText(this, "About MyNews app", R.style.mytoast).show();
+
                 aboutActivity();
                 break;
             default:
@@ -301,7 +308,7 @@ public class MainActivity extends AppCompatActivity
      * @param message Message to display in toast
      */
     public void displayToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        StyleableToast.makeText(getApplicationContext(), message, R.style.mytoast).show();
     }
 
     //SetupTabs
