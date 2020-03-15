@@ -176,8 +176,8 @@ public class MainFragment extends Fragment {
                     mTopStoriesAdapter.notifyDataSetChanged();
                     swipeRefreshLayout.setRefreshing(false);
                     // stop animating Shimmer and hide the layout
-                //    mShimmerViewContainer.stopShimmer();
-               //     mShimmerViewContainer.setVisibility(View.GONE);
+                    mShimmerViewContainer.stopShimmer();
+                    mShimmerViewContainer.setVisibility(View.GONE);
                 }
 
             }
