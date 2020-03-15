@@ -1,59 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/activity_padding">
+    android:layout_height="100dp"
+    android:padding="16dp">
 
     <View
-        android:id="@+id/thumbnail"
-        android:layout_width="@dimen/placeholder_image"
-        android:layout_height="@dimen/placeholder_image"
-        android:layout_marginRight="@dimen/activity_padding"
-        android:background="@color/content_text_color" />
+        android:id="@+id/news"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/content_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/name"
-        android:layout_width="150dp"
+        android:id="@+id/news12"
+        android:layout_width="0dp"
         android:layout_height="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/thumbnail"
-        android:background="@color/content_text_color" />
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/content_text_color"
+        app:layout_constraintEnd_toStartOf="@id/news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:layout_width="100dp"
-        android:layout_height="@dimen/placeholder_text_height"
-        android:layout_below="@id/name"
-        android:layout_toRightOf="@id/thumbnail"
-        android:background="@color/content_text_color" />
+        android:id="@+id/news123"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/content_text_color"
+        app:layout_constraintEnd_toStartOf="@id/news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news12" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/thumbnail"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
+    <View
+        android:id="@+id/ip_address"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/content_text_color"
+        app:layout_constraintEnd_toStartOf="@id/news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/news123" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/placeholder_text_height"
-            android:layout_marginRight="100dp"
-            android:background="@color/card_bg_color" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/placeholder_text_height"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/content_text_color" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/placeholder_text_height"
-            android:layout_marginRight="160dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/content_text_color" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+    <View
+        android:id="@+id/id"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/content_text_color"
+        app:layout_constraintEnd_toStartOf="@id/news"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip_address" />
+</androidx.constraintlayout.widget.ConstraintLayout>

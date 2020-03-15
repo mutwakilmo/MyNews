@@ -41,10 +41,14 @@ import retrofit2.Response;
  */
 public class MainFragment extends Fragment {
 
-    private ShimmerFrameLayout mShimmerViewContainer;
+
+    @BindView(R.id.rv_news)
+    RecyclerView rvNews;
     // 1 - Declare the SwipeRefreshLayout
     @BindView(R.id.fragment_main_swipe_container)
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.shimmer_view_container)
+    ShimmerFrameLayout mShimmerViewContainer;
     private RecyclerView myNewsRecyclerView;
     private TopStoriesAdapter mTopStoriesAdapter;
     private MostPopularAdapter mMostPopularAdapter;
@@ -84,9 +88,6 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // 4 - Configure the SwipeRefreshLayout
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         //Initialize ButterKnife
@@ -99,8 +100,7 @@ public class MainFragment extends Fragment {
         myNewsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-
-        loadDataWithR();
+        executeHttpRequestWithRetrofit();
         //  Configure the SwipeRefreshLayout
         this.configureSwipeRefreshLayout();
 
@@ -108,7 +108,7 @@ public class MainFragment extends Fragment {
     }
 
     private void configureSwipeRefreshLayout() {
-        swipeRefreshLayout.setOnRefreshListener(this::loadDataWithR);
+        swipeRefreshLayout.setOnRefreshListener(this::executeHttpRequestWithRetrofit);
     }
 
 
@@ -168,10 +168,16 @@ public class MainFragment extends Fragment {
         topStoriesResponseCall.enqueue(new Callback<TopStoriesResponse>() {
             @Override
             public void onResponse(Call<TopStoriesResponse> call, Response<TopStoriesResponse> response) {
-                if (response.body() != null) {
+                if (response.isSuccessful() && response.body() != null) {
+                    // -------------------
+                    // UPDATE UI
+                    // -------------------
                     mTopStoriesResultsItems.addAll(response.body().getResults());
                     mTopStoriesAdapter.notifyDataSetChanged();
                     swipeRefreshLayout.setRefreshing(false);
+                    // stop animating Shimmer and hide the layout
+                //    mShimmerViewContainer.stopShimmer();
+               //     mShimmerViewContainer.setVisibility(View.GONE);
                 }
 
             }
@@ -189,7 +195,7 @@ public class MainFragment extends Fragment {
         nyMostPopularResponseCall.enqueue(new Callback<NYMostPopularResponse>() {
             @Override
             public void onResponse(Call<NYMostPopularResponse> call, Response<NYMostPopularResponse> response) {
-                if (response.body() != null) {
+                if (response.isSuccessful() && response.body() != null) {
                     mNYMostPopularResults.clear();
                     // -------------------
                     // UPDATE UI
@@ -197,8 +203,12 @@ public class MainFragment extends Fragment {
                     mNYMostPopularResults.addAll(response.body().getResults());
                     mMostPopularAdapter.notifyDataSetChanged();
                     swipeRefreshLayout.setRefreshing(false);
-                }
 
+                    // stop animating Shimmer and hide the layout
+                   mShimmerViewContainer.stopShimmer();
+                   mShimmerViewContainer.setVisibility(View.GONE);
+
+                }
 
             }
 
@@ -212,7 +222,7 @@ public class MainFragment extends Fragment {
 
     }
 
-    private void loadDataWithR() {
+    private void executeHttpRequestWithRetrofit() {
 
         if (getArguments() != null) {
             String selectedSection = getArguments().getString(NYTConstants.NYT_SECTION_NAME, NYTConstants.NEWS_SECTIONS[0]);
@@ -224,9 +234,23 @@ public class MainFragment extends Fragment {
                 default:
                     myNewsRecyclerView.setAdapter(mTopStoriesAdapter);
                     callTopStories(selectedSection);
+
             }
         }
+
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mShimmerViewContainer.startShimmer();
+    }
+
+    @Override
+    public void onPause() {
+        mShimmerViewContainer.stopShimmer();
+        super.onPause();
+    }
 }
 
