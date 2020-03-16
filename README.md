@@ -34,6 +34,19 @@ For this project, you'll submit a .zip file containing:
 -   Access remote data
     
 -   Use widgets for user interactions
+## Libraries Used
+
+* [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
+* [lottie-android](https://github.com/airbnb/lottie-android)
+* [Butterknife](https://github.com/JakeWharton/butterknife)
+* [Retrofit](https://github.com/square/retrofit)
+* [Glide](https://github.com/bumptech/glide)
+* [gson](https://github.com/google/gson)
+* [KenBurnsView](https://github.com/flavioarfaria/KenBurnsView)
+* [Shimmer-android](https://github.com/facebook/shimmer-android)
+* [leakcanary](https://github.com/square/leakcanary)
+
+
 
 <img src="./art/1.jpg" width="30%">&ensp;<img src="./art/3.jpg" width="30%">
 <img src="./art/2.jpg" width="30%">&ensp;<img src="./art/4.jpg" width="30%">
