@@ -6,12 +6,12 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.Objects;
@@ -31,6 +31,7 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
     LottieAnimationView imageView9;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +45,20 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
         Intent myIntent = getIntent();
         String websiteUrl = Objects.requireNonNull(myIntent.getExtras()).getString("websiteUrl");
         // Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
-        Toast.makeText(this, "It's Time to Read!\uD83E\uDD71\uD83D\uDC53", Toast.LENGTH_SHORT).show();
+        StyleableToast.makeText(this, "Reading is important because it develops the mind\uD83E\uDD71\uD83D\uDC53", R.style.mytoast).show();
 
 
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(websiteUrl);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+
+        //------------------------------------------------------------------------------------
+        //display current date using the Calendar class, how to format the date to the user’s
+        // locale with the help of DateFormat and how to display it
+        //------------------------------------------------------------------------------------
+
+
     }
 
     @Override

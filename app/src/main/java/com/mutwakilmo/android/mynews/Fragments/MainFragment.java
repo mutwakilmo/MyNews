@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.facebook.shimmer.ShimmerFrameLayout;
 import com.mutwakilmo.android.mynews.Adapter.MostPopularAdapter;
 import com.mutwakilmo.android.mynews.Adapter.TopStoriesAdapter;
 import com.mutwakilmo.android.mynews.BuildConfig;
@@ -47,8 +46,8 @@ public class MainFragment extends Fragment {
     // 1 - Declare the SwipeRefreshLayout
     @BindView(R.id.fragment_main_swipe_container)
     SwipeRefreshLayout swipeRefreshLayout;
-    @BindView(R.id.shimmer_view_container)
-    ShimmerFrameLayout mShimmerViewContainer;
+//    @BindView(R.id.shimmer_view_container)
+//    ShimmerFrameLayout mShimmerViewContainer;
     private RecyclerView myNewsRecyclerView;
     private TopStoriesAdapter mTopStoriesAdapter;
     private MostPopularAdapter mMostPopularAdapter;
@@ -176,8 +175,8 @@ public class MainFragment extends Fragment {
                     mTopStoriesAdapter.notifyDataSetChanged();
                     swipeRefreshLayout.setRefreshing(false);
                     // stop animating Shimmer and hide the layout
-                    mShimmerViewContainer.stopShimmer();
-                    mShimmerViewContainer.setVisibility(View.GONE);
+//                    mShimmerViewContainer.stopShimmer();
+//                    mShimmerViewContainer.setVisibility(View.GONE);
                 }
 
             }
@@ -205,8 +204,8 @@ public class MainFragment extends Fragment {
                     swipeRefreshLayout.setRefreshing(false);
 
                     // stop animating Shimmer and hide the layout
-                   mShimmerViewContainer.stopShimmer();
-                   mShimmerViewContainer.setVisibility(View.GONE);
+//                    mShimmerViewContainer.stopShimmer();
+//                    mShimmerViewContainer.setVisibility(View.GONE);
 
                 }
 
@@ -241,16 +240,16 @@ public class MainFragment extends Fragment {
     }
 
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        mShimmerViewContainer.startShimmer();
-    }
-
-    @Override
-    public void onPause() {
-        mShimmerViewContainer.stopShimmer();
-        super.onPause();
-    }
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//        mShimmerViewContainer.startShimmer();
+//    }
+//
+//    @Override
+//    public void onPause() {
+//        mShimmerViewContainer.stopShimmer();
+//        super.onPause();
+//    }
 }
 
