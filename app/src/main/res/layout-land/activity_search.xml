@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".Activities.SearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white">
+        <!--Custom app name color -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="monospace"
+            android:text="Search"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="monospace"
+            android:text=" Articles"
+            android:textColor="#3cff00"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_input_style"
+            android:drawableLeft="@drawable/ic_search_gray_24dp"
+            android:hint="Search query term"
+            android:importantForAutofill="no"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,TextFields"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutDate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextSearch"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Begin Date"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="End Date"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editTextLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayoutDate"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/editTextBeginDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="20/02/2017"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/editTextEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="MM/DD/YY"
+                android:importantForAutofill="no"
+                tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
+                tools:targetApi="o" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextLL"
+            android:layout_marginTop="5dp"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/artsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Arts"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/politicsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Politics"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkboxLL1"
+            android:layout_marginTop="5dp"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/businessCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Business"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/sportsCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sports"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/checkboxLL3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkboxLL2"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorPrimary"
+            android:weightSum="2">
+
+            <CheckBox
+                android:id="@+id/entrepreneursCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:text="Entrepreneurs"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/travelCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Travel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkboxLL3"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button_corner"
+            android:fontFamily="@font/alfa_slab_one"
+            android:letterSpacing="0.1"
+            android:text="Search"
+            android:textColor="#3cff00"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

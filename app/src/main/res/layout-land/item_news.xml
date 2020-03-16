@@ -83,9 +83,9 @@
             android:layout_height="18dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="438dp"
-            android:layout_marginEnd="-3dp"
-            android:layout_marginBottom="13dp"
+            android:layout_marginStart="432dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="-1dp"
             android:layout_toEndOf="@+id/tv_date"
             app:srcCompat="@drawable/ic_launcher_web" />
     </RelativeLayout>
