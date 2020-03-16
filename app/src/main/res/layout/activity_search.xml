@@ -23,7 +23,7 @@
             android:fontFamily="monospace"
             android:text="Search"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:fontFamily="monospace"
             android:text=" Articles"
             android:textColor="#3cff00"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>

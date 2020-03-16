@@ -22,7 +22,7 @@
             android:fontFamily="monospace"
             android:text="No"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
         <TextView
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
             android:fontFamily="monospace"
             android:text="tifications"
             android:textColor="#3cff00"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 

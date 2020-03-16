@@ -21,7 +21,7 @@
             android:fontFamily="@font/archivo_black"
             android:text="MY"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:fontFamily="@font/archivo_black"
             android:text=" NEWS"
             android:textColor="#3cff00"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
@@ -51,10 +51,8 @@
         android:layout_width="51dp"
         android:layout_height="28dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="345dp"
+        android:layout_marginTop="55dp"
         android:foregroundGravity="center"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"

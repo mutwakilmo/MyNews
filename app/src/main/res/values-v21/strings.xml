@@ -4,4 +4,6 @@
     <string name="movies">Movies</string>
     <string name="books">Books</string>
     <string name="realestate">Real Estate</string>
+    <string name="name">Created By Mutwakil Mo</string>
+    <string name="OC">OpenClassrooms Project 7 : An Android news app that fetches news from The New York Times API.</string>
 </resources>
