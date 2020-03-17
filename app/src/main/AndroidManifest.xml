@@ -6,6 +6,7 @@
     permission in question, here INTERNET. You can retrieve the full list of permissions
     from Android’s site
     -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -15,12 +16,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.NotificationsActivity"></activity>
-        <activity android:name=".Activities.HelpActivity" />
-        <activity android:name=".Activities.AboutActivity" />
+
+        <!-- A child of the main activity -->
+
+        <activity
+            android:name=".Activities.NotificationsActivity"
+            android:parentActivityName=".Activities.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Activities.HelpActivity"
+            android:parentActivityName=".Activities.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Activities.AboutActivity"
+            android:parentActivityName=".Activities.MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
+        </activity>
         <activity
             android:name=".Activities.NewYorkTimesWebViewActivity"
-            android:parentActivityName=".Activities.MainActivity" /> <!-- A child of the main activity -->
+            android:parentActivityName=".Activities.MainActivity" />
+
         <activity
             android:name=".Activities.SearchActivity"
             android:parentActivityName=".Activities.MainActivity">
@@ -30,8 +61,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
+
+        <!-- Launch Activity -->
         <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.WelcomeActivity" /> <!-- Launch Activity -->
+        <activity android:name=".Activities.WelcomeActivity" />
         <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

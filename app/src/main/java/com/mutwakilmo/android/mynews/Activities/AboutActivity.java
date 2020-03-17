@@ -7,12 +7,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 import com.mutwakilmo.android.mynews.R;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,7 +48,11 @@ public class AboutActivity extends AppCompatActivity {
         //Initialize ButterKnife
         ButterKnife.bind(this);
         Log.d(LOG_TAG_ABOUT, "onCreate: ");
-
+        // CALL getInternetStatus() function to check for internet and display error dialog
+        if(new InternetDialog(this).getInternetStatus()){
+            Toast.makeText(this, "MyNews Online\uD83D\uDCF6", Toast.LENGTH_SHORT).show();
+        }
+        setActionBar(toolbar);
     }
 
 
@@ -99,4 +107,11 @@ public class AboutActivity extends AppCompatActivity {
         String linkedin = "https://www.linkedin.com/in/mutwakil-mo/";
         openWebPage(linkedin);
     }
+    private void setActionBar(Toolbar toolbar) {
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(null);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
 }

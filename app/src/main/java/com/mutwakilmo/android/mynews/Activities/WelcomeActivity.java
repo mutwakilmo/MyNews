@@ -3,12 +3,16 @@ package com.mutwakilmo.android.mynews.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.muddzdev.styleabletoast.StyleableToast;
+import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 import com.mutwakilmo.android.mynews.R;
+
+import java.net.InetAddress;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +36,11 @@ public class WelcomeActivity extends AppCompatActivity {
         Log.d(LOG_TAG_WELCOME, "onCreate");
         //Initialize ButterKnife
         ButterKnife.bind(this);
+        // CALL getInternetStatus() function to check for internet and display error dialog
+        if(new InternetDialog(this).getInternetStatus()){
+            Toast.makeText(this, "MyNews Online\uD83D\uDCF6", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @OnClick(R.id.start_btn)
@@ -42,5 +51,15 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
+    public boolean isInternetAvailable() {
+        try {
+            InetAddress ipAddr = InetAddress.getByName("google.com");
+            //You can replace it with your name
+            return !ipAddr.equals("");
+
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

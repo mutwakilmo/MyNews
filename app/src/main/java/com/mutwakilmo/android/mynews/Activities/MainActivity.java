@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.muddzdev.styleabletoast.StyleableToast;
 import com.mutwakilmo.android.mynews.Adapter.ViewPagerAdapter;
+import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 import com.mutwakilmo.android.mynews.R;
 
 import java.util.Objects;
@@ -43,8 +45,6 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
-
-
 
 
     /**
@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity
         }
 
         setupTabs();
+
+        // CALL getInternetStatus() function to check for internet and display error dialog
+        if(new InternetDialog(this).getInternetStatus()){
+            Toast.makeText(this, "MyNews Online\uD83D\uDCF6", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
@@ -133,7 +138,7 @@ public class MainActivity extends AppCompatActivity
                 openSearchActivity();
                 break;
             case R.id.action_notifications:
-               // Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
+                // Toast.makeText(this, "Notifications", Toast.LENGTH_LONG).show();
                 StyleableToast.makeText(this, "Notifications From MyNews app", R.style.mytoast).show();
                 notificationsActivity();
                 break;
@@ -311,14 +316,18 @@ public class MainActivity extends AppCompatActivity
         StyleableToast.makeText(getApplicationContext(), message, R.style.mytoast).show();
     }
 
-    //SetupTabs
+    // -------------------------
+    // CONFIGURATION SetupTabs
+    // -------------------------
     private void setupTabs() {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager.setAdapter(viewPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    //Open SearchActivity
+    // ----------------------------
+    // CONFIGURATION SearchActivity
+    // ----------------------------
     private void openSearchActivity() {
         Intent searchActivity = new Intent(MainActivity.this, SearchActivity.class);
         startActivity(searchActivity);
@@ -327,7 +336,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    //Open AboutActivity
+
+    // -------------------------
+    // CONFIGURATION AboutActivity
+    // -------------------------
     private void aboutActivity() {
         Intent about = new Intent(MainActivity.this, AboutActivity.class);
         startActivity(about);
@@ -335,7 +347,10 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG_LOG_MAIN, "aboutActivity: OpenAboutActivity");
     }
 
-    //Open HelpActivity
+
+    // -------------------------
+    // CONFIGURATION HelpActivity
+    // -------------------------
     private void helpActivity() {
         Intent help = new Intent(MainActivity.this, HelpActivity.class);
         startActivity(help);
@@ -344,7 +359,10 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    //Open Notifications
+
+    // --------------------------------
+    // CONFIGURATION Open Notifications
+    // -------------------------------
     private void notificationsActivity() {
         Intent notifications = new Intent(MainActivity.this, NotificationsActivity.class);
         startActivity(notifications);
@@ -353,11 +371,17 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    // return to welcome Activity with slide animation
+
+    // --------------------------------
+    // return to welcome Activity with
+    // slide animation
+    // -------------------------------
+
     @Override
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+
 
 }
