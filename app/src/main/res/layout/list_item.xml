@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   Created by Mutwakil Mo🐮🐮🐮
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginTop="8dp">
+
+    <RelativeLayout
+        android:paddingBottom="16dp"
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/card_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/img_news"
+            android:layout_width="95dp"
+            android:layout_height="113dp"
+            android:layout_marginStart="292dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.246"
+            tools:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
+            />
+
+        <TextView
+            android:id="@+id/tv_section"
+            android:layout_width="109dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:text="world>arts"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="publish date"
+            android:textColor="@color/black"
+            android:fontFamily="@font/news_cycle_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="267dp"
+            android:layout_height="65dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/news_cycle_bold"
+            android:includeFontPadding="true"
+            android:text="MyNews Title"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="32dp"
+            android:layout_height="17dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="216dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="36dp"
+            android:layout_toEndOf="@+id/tv_date"
+            app:srcCompat="@drawable/ic_launcher_web" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

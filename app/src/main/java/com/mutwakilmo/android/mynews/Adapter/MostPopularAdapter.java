@@ -79,7 +79,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
             //    viewHolder.relativeLayout.setBackgroundColor(R.color.colorPrimaryDark);
         });
 
-        //Todo subsection
+
         if (nyMostPopularResult.getMedia().size() > 0 && nyMostPopularResult.getMedia().get(0).getMediaMetadata().size() > 0)
             Glide.with(mContext)
                     .load(nyMostPopularResult.getMedia().get(0).getMediaMetadata().get(0).getUrl())

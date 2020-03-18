@@ -80,7 +80,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         ButterKnife.bind(this);
         Log.d(TAG_LOG_SEARCH, "onCreate: ");
-        
+
 
         // CALL getInternetStatus() function to check for internet and display error dialog
         if (new InternetDialog(this).getInternetStatus()) {
