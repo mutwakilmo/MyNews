@@ -74,6 +74,7 @@
                 android:layout_weight="1"
                 android:text="Begin Date"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -83,6 +84,7 @@
                 android:layout_weight="1"
                 android:text="End Date"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -102,7 +104,8 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:focusable="false"
-                android:hint="20/02/2017"
+                android:hint="MM/DD/YY"
+                android:textStyle="bold"
                 android:importantForAutofill="no"
                 tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 tools:targetApi="o" />
@@ -117,6 +120,7 @@
                 android:clickable="true"
                 android:focusable="false"
                 android:hint="MM/DD/YY"
+                android:textStyle="bold"
                 android:importantForAutofill="no"
                 tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TextFields"
                 tools:targetApi="o" />

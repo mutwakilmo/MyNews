@@ -8,7 +8,7 @@
     <color name="colorPrimary">#0336FF</color>
     <color name="colorOnPrimary">#336200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#0336FF</color>
     <color name="colorWhite">#FFFFFF</color>
 
     <color name="color_fab">#ffffff</color>

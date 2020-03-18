@@ -1,5 +1,6 @@
 package com.mutwakilmo.android.mynews.Utils;
 
+import com.mutwakilmo.android.mynews.Models.ArticleSearchResponse;
 import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResponse;
 import com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResponse;
 
@@ -54,5 +55,20 @@ public interface NewYorkTimesService {
             @Query("api-key") String API_KEY
     );
 
+
+     /*--------------------
+    |
+    |Article Search API
+    |---------------------*/
+
+  
+    @GET("search/v2/articlesearch.json")
+    Call<ArticleSearchResponse> getArticleSearch(
+            @Query("q") String QUERY,
+            @Query("fq") String FILTER,
+            @Query("begin_date") String BEGIN_DATE,
+            @Query("end_date") String END_DATE,
+            @Query("api-key") String API_KEY
+    );
 
 }

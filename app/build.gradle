@@ -72,21 +72,21 @@ dependencies {
 
     // debugImplementation because LeakCanary should only run in debug builds.
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
-      //------------------------------------------------------------------------------------
-      //You are getting this error because you've reached (and went over) the limit
-      // of the android build architecture - a single DEX file can hold only around 64 thousand
-      // references.
-      //    For Androidx Users,
-      //
-      //    dependencies {
-      //    implementation 'androidx.multidex:multidex:2.0.1'
-      //    }
-      //    defaultConfig {
-     //        minSdkVersion 16
-     //        targetSdkVersion 28
-     //        multiDexEnabled true  //ADD THIS LINE
-     //    }
-     //--------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
+    //You are getting this error because you've reached (and went over) the limit
+    // of the android build architecture - a single DEX file can hold only around 64 thousand
+    // references.
+    //    For Androidx Users,
+    //
+    //    dependencies {
+    //    implementation 'androidx.multidex:multidex:2.0.1'
+    //    }
+    //    defaultConfig {
+    //        minSdkVersion 16
+    //        targetSdkVersion 28
+    //        multiDexEnabled true  //ADD THIS LINE
+    //    }
+    //--------------------------------------------------------------------------------
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.cardview:cardview:1.0.0"
 

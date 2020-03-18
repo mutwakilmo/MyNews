@@ -16,29 +16,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Activities.NYSearchResultActivity"></activity>
         <!-- A child of the main activity -->
-
         <activity
             android:name=".Activities.NotificationsActivity"
             android:parentActivityName=".Activities.MainActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-
-
         <activity
             android:name=".Activities.HelpActivity"
             android:parentActivityName=".Activities.MainActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
-
-
         <activity
             android:name=".Activities.AboutActivity"
             android:parentActivityName=".Activities.MainActivity">
@@ -51,7 +48,6 @@
         <activity
             android:name=".Activities.NewYorkTimesWebViewActivity"
             android:parentActivityName=".Activities.MainActivity" />
-
         <activity
             android:name=".Activities.SearchActivity"
             android:parentActivityName=".Activities.MainActivity">
@@ -60,9 +56,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
-        </activity>
-
-        <!-- Launch Activity -->
+        </activity> <!-- Launch Activity -->
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.WelcomeActivity" />
         <activity android:name=".Activities.SplashActivity">
