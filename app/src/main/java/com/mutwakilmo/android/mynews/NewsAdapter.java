@@ -23,10 +23,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by Mutwakil Mo on
+ * Created by Mutwakil Mo on Search Adapter
  */
-@SuppressWarnings("ALL")
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     private List<ListItem> listItems;
     private Context context;
@@ -40,7 +39,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         mListener = listener;
     }
 
-    public MyAdapter(List<ListItem> listItems, Context context) {
+    public NewsAdapter(List<ListItem> listItems, Context context) {
         this.listItems = listItems;
         this.context = context;
 

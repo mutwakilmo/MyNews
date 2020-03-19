@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.mutwakilmo.android.mynews.BuildConfig;
 import com.mutwakilmo.android.mynews.ListItem;
 import com.mutwakilmo.android.mynews.Models.ArticleSearchResponse;
-import com.mutwakilmo.android.mynews.MyAdapter;
+import com.mutwakilmo.android.mynews.NewsAdapter;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.NewYorkTimesService;
 
@@ -97,10 +97,10 @@ public class NYSearchResultActivity extends AppCompatActivity {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(NYSearchResultActivity.this));
             listItems = new ArrayList<>();
-            mAdapter = new MyAdapter(listItems, NYSearchResultActivity.this);;
+            mAdapter = new NewsAdapter(listItems, NYSearchResultActivity.this);;
 
 
-            Call<ArticleSearchResponse> call = null;
+            Call<ArticleSearchResponse> call;
 
 
             call = mNewYorkTimesService.getArticleSearch(searchQuery, Objects.requireNonNull(categoriesSelected).toString().replace("[", "").replace("]", ""), outputDateStr, endOutputDateStr, BuildConfig.MY_NYT_API_KEY);
@@ -122,7 +122,7 @@ public class NYSearchResultActivity extends AppCompatActivity {
                                 @SuppressLint("SimpleDateFormat") DateFormat outputFormat = new SimpleDateFormat("MM/dd/yyyy");
                                 String inputDateStr = theListOfArticles.getDocs().get(i).getPubDate();
                                 if (inputDateStr == null) {
-                                    inputDateStr = "2018-10-25T21:09:24";
+                                    inputDateStr = "";
                                 }
 
                                 Date date = null;
@@ -179,3 +179,4 @@ public class NYSearchResultActivity extends AppCompatActivity {
 
 }
 
+           // call = mNewYorkTimesService.getArticleSearch("q","fq","begin_date","end_date", BuildConfig.MY_NYT_API_KEY);
