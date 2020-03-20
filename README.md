@@ -40,6 +40,7 @@ For this project, you'll submit a .zip file containing:
 * [lottie-android](https://github.com/airbnb/lottie-android)
 * [Butterknife](https://github.com/JakeWharton/butterknife)
 * [Retrofit](https://github.com/square/retrofit)
+* [okhttp-logging-interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor#logging-interceptor)
 * [Glide](https://github.com/bumptech/glide)
 * [gson](https://github.com/google/gson)
 * [KenBurnsView](https://github.com/flavioarfaria/KenBurnsView)
