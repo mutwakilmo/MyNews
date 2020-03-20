@@ -1,9 +1,11 @@
 package com.mutwakilmo.android.mynews.Utils;
 
-import com.mutwakilmo.android.mynews.Models.ArticleSearchResponse;
+import com.mutwakilmo.android.mynews.Models.SearchNewYork.ArticleSearchResponse;
 import com.mutwakilmo.android.mynews.Models.New_York_Times_Most_Popular.NYMostPopularResponse;
 import com.mutwakilmo.android.mynews.Models.New_York_Times_Top_Stories.TopStoriesResponse;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -23,13 +25,23 @@ public interface NewYorkTimesService {
     // used by default by Retrofit, here GSON.
     // -------------------------------------------------------------------------------------
 
+
     //Base URL from the NewYorkTimes APIs
     String NEW_YORK_TIMES_URL = "https://api.nytimes.com/svc/";
+
+    /*Ok HttpLoggingInterceptor*/
+
+    HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+    OkHttpClient okHttpClient = new OkHttpClient.Builder()
+            .addInterceptor(logging).build();
+
+
 
     //Retrofit Instance
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(NEW_YORK_TIMES_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
             .build();
 
 

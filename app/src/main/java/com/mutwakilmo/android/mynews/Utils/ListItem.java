@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Utils;
 
 import android.content.Context;
 
@@ -6,7 +6,6 @@ import android.content.Context;
  * Created by Mutwakil Mo on
  */
 public class ListItem {
-
 
     String section;
     String subsection;

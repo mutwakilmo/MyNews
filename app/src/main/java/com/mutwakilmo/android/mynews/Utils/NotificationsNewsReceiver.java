@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Utils;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -36,13 +36,14 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Date date = new Date();
 
-       // String searchQuery = sharedPreferences.getString("editTextNotifications")
+        String searchQuery = sharedPreferences.getString("editTextNotification", "");
         boolean isArtsChecked = sharedPreferences.getBoolean("isArtsChecked", false);
         boolean isPoliticsChecked = sharedPreferences.getBoolean("isPoliticsChecked", false);
         boolean isBusinessChecked = sharedPreferences.getBoolean("isBusinessChecked", false);
         boolean isSportsChecked = sharedPreferences.getBoolean("isSportsChecked", false);
         boolean isEntrepreneursChecked = sharedPreferences.getBoolean("isEntrepreneursChecked", false);
         boolean isTravelChecked = sharedPreferences.getBoolean("isTravelChecked", false);
+
 
 
 

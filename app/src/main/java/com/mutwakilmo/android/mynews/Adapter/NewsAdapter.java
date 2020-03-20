@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews;
+package com.mutwakilmo.android.mynews.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.flaviofaria.kenburnsview.KenBurnsView;
+import com.bumptech.glide.Glide;
 import com.mutwakilmo.android.mynews.Activities.NewYorkTimesWebViewActivity;
-import com.squareup.picasso.Picasso;
+import com.mutwakilmo.android.mynews.Utils.ListItem;
+import com.mutwakilmo.android.mynews.R;
 
 import java.util.List;
 
@@ -57,12 +58,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         final ListItem listItem = listItems.get(i);
 
         viewHolder.container.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale_animation));
-        viewHolder.sectionTextView.setText(listItem.getSection());
+        // viewHolder.textViewSection.setText(listItem.getSection());
+        // viewHolder.textViewSubsection.setText(listItem.getSubsection());
+            viewHolder.titleTextView.setText(listItem.getDesc() +"");
+            viewHolder.dateTextView.setText(listItem.getDate() );
+            Glide.with(context)
+                    .load(listItem.getUrlImage())
+                    .fallback(R.mipmap.ic_launcher)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
+                    .into(viewHolder.newsImageView);
 
 
-        viewHolder.titleTextView.setText(listItem.getDesc());
-        viewHolder.dateTextView.setText(listItem.getDate());
-        Picasso.get().load(listItem.getUrlImage()).into(viewHolder.newsImageView);
+
 
 
         viewHolder.container.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +91,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.img_news)
-        KenBurnsView newsImageView;
+        ImageView newsImageView;
         @BindView(R.id.tv_section)
         TextView sectionTextView;
         @BindView(R.id.tv_date)

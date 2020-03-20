@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews.Models;
+package com.mutwakilmo.android.mynews.Models.SearchNewYork;
 
 import com.google.gson.annotations.SerializedName;
 

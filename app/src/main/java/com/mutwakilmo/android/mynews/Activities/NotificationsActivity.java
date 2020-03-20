@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.mutwakilmo.android.mynews.NotificationsNewsReceiver;
+import com.mutwakilmo.android.mynews.Utils.NotificationsNewsReceiver;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 

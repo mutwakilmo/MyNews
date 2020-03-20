@@ -158,7 +158,7 @@ public class SearchActivity extends AppCompatActivity {
     // -------------------------------
 
     final Calendar mCalendar = Calendar.getInstance();
-    final DatePickerDialog.OnDateSetListener mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+    final DatePickerDialog.OnDateSetListener mOnBeginDateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
             mCalendar.set(Calendar.YEAR, year);
@@ -168,21 +168,42 @@ public class SearchActivity extends AppCompatActivity {
         }
 
         private void formatTime() {
-            String mFormat = "dd/MM/YYY";
+            String mFormat = "yyyyMMdd";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(mFormat, Locale.FRANCE);
-            editTextBeginDate.setText(simpleDateFormat.format(mCalendar.getTime()));
-            editTextEndDate.setText(simpleDateFormat.format(mCalendar.getTime()));
             beginDate[0] = simpleDateFormat.format(mCalendar.getTime());
+
+            String displayFormat = "MM/dd/yy";
+            SimpleDateFormat simpleDisplayDateFormat = new SimpleDateFormat(displayFormat, Locale.FRANCE);
+            editTextBeginDate.setText(simpleDisplayDateFormat.format(mCalendar.getTime()));
         }
     };
 
+    final DatePickerDialog.OnDateSetListener mOnEndDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            mCalendar.set(Calendar.YEAR, year);
+            mCalendar.set(Calendar.MONTH, month);
+            mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            formatTime();
+        }
+
+        private void formatTime() {
+            String mFormat = "yyyyMMdd";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(mFormat, Locale.FRANCE);
+            theEndDate[0] = simpleDateFormat.format(mCalendar.getTime());
+
+            String displayFormat = "MM/dd/yy";
+            SimpleDateFormat simpleDisplayDateFormat = new SimpleDateFormat(displayFormat, Locale.FRANCE);
+            editTextEndDate.setText(simpleDisplayDateFormat.format(mCalendar.getTime()));
+        }
+    };
 
     // --------------------------------
     //Search Begin Date Onclick TimePicker
     // -------------------------------
     @OnClick(R.id.editTextBeginDate)
     public void onEditTextBeginDateClicked() {
-        new DatePickerDialog(SearchActivity.this, mOnDateSetListener, mCalendar
+        new DatePickerDialog(SearchActivity.this, mOnBeginDateSetListener, mCalendar
                 .get(Calendar.YEAR), mCalendar.get(Calendar.MONTH),
                 mCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }
@@ -192,7 +213,7 @@ public class SearchActivity extends AppCompatActivity {
     // -------------------------------
     @OnClick(R.id.editTextEndDate)
     public void onEditTextEndDateClicked() {
-        new DatePickerDialog(SearchActivity.this, mOnDateSetListener, mCalendar
+        new DatePickerDialog(SearchActivity.this, mOnEndDateSetListener, mCalendar
                 .get(Calendar.YEAR), mCalendar.get(Calendar.MONTH),
                 mCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }

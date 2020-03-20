@@ -9,40 +9,39 @@
     android:layout_marginTop="8dp">
 
     <RelativeLayout
-        android:paddingBottom="16dp"
         android:id="@+id/container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:background="@drawable/card_bg"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.flaviofaria.kenburnsview.KenBurnsView
+        <ImageView
             android:id="@+id/img_news"
             android:layout_width="95dp"
             android:layout_height="113dp"
             android:layout_marginStart="292dp"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.246"
-            tools:src="@mipmap/ic_launcher"
-            android:scaleType="fitXY"
-            />
+            tools:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_section"
             android:layout_width="109dp"
             android:layout_height="28dp"
             android:layout_marginStart="16dp"
-            android:text="world>arts"
+            android:maxLines="1"
+            android:text="World"
+            android:textAllCaps="true"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            android:textAllCaps="true"
-            android:maxLines="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,9 +52,9 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/news_cycle_bold"
             android:text="publish date"
             android:textColor="@color/black"
-            android:fontFamily="@font/news_cycle_bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -70,9 +69,9 @@
             android:fontFamily="@font/news_cycle_bold"
             android:includeFontPadding="true"
             android:text="MyNews Title"
-            android:textStyle="bold"
-            android:textSize="20dp"
             android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

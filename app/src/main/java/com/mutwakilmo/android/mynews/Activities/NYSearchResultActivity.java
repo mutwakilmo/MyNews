@@ -11,10 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mutwakilmo.android.mynews.BuildConfig;
-import com.mutwakilmo.android.mynews.ListItem;
-import com.mutwakilmo.android.mynews.Models.ArticleSearchResponse;
-import com.mutwakilmo.android.mynews.NewsAdapter;
+import com.mutwakilmo.android.mynews.Utils.ListItem;
+import com.mutwakilmo.android.mynews.Models.SearchNewYork.ArticleSearchResponse;
+import com.mutwakilmo.android.mynews.Adapter.NewsAdapter;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.NewYorkTimesService;
 
@@ -39,10 +38,11 @@ public class NYSearchResultActivity extends AppCompatActivity {
     @BindView(R.id.search_recycler_view)
     RecyclerView searchRecyclerView;
 
-    private RecyclerView.Adapter mAdapter;
+    private NewsAdapter mAdapter;
     private List<ListItem> listItems;
 
     private NewYorkTimesService mNewYorkTimesService = NewYorkTimesService.retrofit.create(NewYorkTimesService.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,34 +61,6 @@ public class NYSearchResultActivity extends AppCompatActivity {
             categoriesSelected = bundle.getStringArrayList("categoriesSelected");
         }
 
-        @SuppressLint("SimpleDateFormat") DateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy");
-        @SuppressLint("SimpleDateFormat") DateFormat outputFormat = new SimpleDateFormat("yyyyMMdd");
-        String inputDateStr = theBeginDateString;
-        String endInputDateStr = theEndDateString;
-        Date date = null;
-        Date endDate = null;
-        String outputDateStr = null;
-        String endOutputDateStr = null;
-
-        if (inputDateStr != null) {
-            try {
-                date = inputFormat.parse(inputDateStr);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            outputDateStr = outputFormat.format(date);
-
-        }
-        if (endInputDateStr != null) {
-            try {
-                endDate = inputFormat.parse(endInputDateStr);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            endOutputDateStr = outputFormat.format(endDate);
-        }
-
-
         if (Objects.requireNonNull(searchQuery).equals("")) {
             noResultsTV.setText("Please enter a word in the search bar");
         } else {
@@ -97,13 +69,10 @@ public class NYSearchResultActivity extends AppCompatActivity {
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new LinearLayoutManager(NYSearchResultActivity.this));
             listItems = new ArrayList<>();
-            mAdapter = new NewsAdapter(listItems, NYSearchResultActivity.this);;
-
-
+            mAdapter = new NewsAdapter(listItems, NYSearchResultActivity.this);
+            ;
             Call<ArticleSearchResponse> call;
-
-
-            call = mNewYorkTimesService.getArticleSearch(searchQuery, Objects.requireNonNull(categoriesSelected).toString().replace("[", "").replace("]", ""), outputDateStr, endOutputDateStr, BuildConfig.MY_NYT_API_KEY);
+            call = mNewYorkTimesService.getArticleSearch(searchQuery, Objects.requireNonNull(categoriesSelected).toString().replace("[", "").replace("]", ""), theBeginDateString, theEndDateString, "FAPKrODFWcdFsvvfOBe8huf5SCc0NnBP");
             Toast.makeText(this, searchQuery, Toast.LENGTH_SHORT).show();
             recyclerView.setAdapter(mAdapter);
             if (call != null) {
@@ -112,7 +81,7 @@ public class NYSearchResultActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<ArticleSearchResponse> call, @NonNull Response<ArticleSearchResponse> response) {
                         ArticleSearchResponse articles = response.body();
-                        com.mutwakilmo.android.mynews.Models.Response  theListOfArticles = Objects.requireNonNull(articles).getResponse();
+                        com.mutwakilmo.android.mynews.Models.SearchNewYork.Response theListOfArticles = Objects.requireNonNull(articles).getResponse();
 
                         if (theListOfArticles != null) {
 
@@ -138,7 +107,7 @@ public class NYSearchResultActivity extends AppCompatActivity {
                                             "",
                                             theListOfArticles.getDocs().get(i).getSnippet(),
                                             outputDateStr,
-                                            "http://www.nytimes.com/" + theListOfArticles.getDocs().get(i).getMultimedia().get(0).getUrl(),
+                                            theListOfArticles.getDocs().get(i).getMultimedia().get(0).getUrl(),
                                             theListOfArticles.getDocs().get(i).getWebUrl(),
                                             NYSearchResultActivity.this);
 
@@ -148,7 +117,7 @@ public class NYSearchResultActivity extends AppCompatActivity {
                                             "",
                                             theListOfArticles.getDocs().get(i).getSnippet(),
                                             outputDateStr,
-                                            "https://i.postimg.cc/tTTvdhVF/mn.png".replace("https://", "http://"),
+                                            "".replace("https://", "http://"),
                                             theListOfArticles.getDocs().get(i).getWebUrl(),
                                             NYSearchResultActivity.this);
                                     listItems.add(listItem);
@@ -179,4 +148,3 @@ public class NYSearchResultActivity extends AppCompatActivity {
 
 }
 
-           // call = mNewYorkTimesService.getArticleSearch("q","fq","begin_date","end_date", BuildConfig.MY_NYT_API_KEY);
