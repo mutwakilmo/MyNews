@@ -21,11 +21,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.muddzdev.styleabletoast.StyleableToast;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 import com.mutwakilmo.android.mynews.Utils.NotificationsNewsReceiver;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -70,6 +73,7 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
     LottieAnimationView imageView3;
 
     public static final String NY_PREFS_NAME = "NotificationsFile";
+    private List<String> categoriesBeSelected = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +93,8 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
         boolean isSportsChecked = sharedPreferences.getBoolean("isSportsChecked", false);
         boolean isEntrepreneursChecked = sharedPreferences.getBoolean("isEntrepreneursChecked", false);
         boolean isTravelChecked = sharedPreferences.getBoolean("isTravelChecked", false);
+
+
 
         // --------------------------------
         // SharedPref
@@ -199,6 +205,13 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
             assert alarmManager != null;
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                     AlarmManager.INTERVAL_HALF_HOUR, pendingIntent);
+
+
+//            Intent intent1 = new Intent("my.action.string");
+//            intent.putExtra("searchQuery", "search");
+//            intent.putExtra("categoriesSelected", (ArrayList) categoriesBeSelected);
+//            sendBroadcast(intent1);
+
         }
 
 
@@ -227,7 +240,7 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
     // SharedPref
     // -------------------------------
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Toast.makeText(this, "Notifications are " + (isChecked ? "on" : "off"), Toast.LENGTH_SHORT).show();
+        StyleableToast.makeText(this, "Notifications  " + (isChecked ? "On" : "Off"), R.style.mytoast).show();
 
         SharedPreferences.Editor editor = getSharedPreferences(NY_PREFS_NAME, MODE_PRIVATE).edit();
         editor.putBoolean("isChecked", isChecked);

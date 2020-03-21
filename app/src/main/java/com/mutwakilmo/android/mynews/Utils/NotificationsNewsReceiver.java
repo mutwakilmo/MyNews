@@ -27,6 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.content.Context.MODE_PRIVATE;
 import static com.mutwakilmo.android.mynews.Activities.NotificationsActivity.NY_PREFS_NAME;
 
@@ -47,7 +48,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
         final NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
 
-        final PendingIntent pendingIntent = PendingIntent.getActivity(context, 200, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        final PendingIntent pendingIntent = PendingIntent.getActivity(context, 200, intent, FLAG_UPDATE_CURRENT);
 
 
         ArrayList<String> categoriesCBSelected = new ArrayList<>();
@@ -89,6 +90,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
 
         if (call != null) {
             call.enqueue(new Callback<ArticleSearchResponse>() {
+
                 @SuppressWarnings("deprecation")
                 @Override
                 public void onResponse(@NonNull Call<ArticleSearchResponse> call, @NonNull Response<ArticleSearchResponse> response) {
@@ -98,16 +100,18 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
                         if (Build.VERSION.SDK_INT <= 25) {
                             @SuppressLint("IconColors") NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                                     .setContentIntent(pendingIntent)
-                                    .setSmallIcon(R.drawable.ic_bookmark_border_black_24dp)
-                                    .setContentTitle("My News")
+                                    .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
+                                    .setContentTitle("MyNews")
                                     .setContentText("Your articles of the day are ready")
+
                                     .setAutoCancel(true);
+
                             Objects.requireNonNull(notificationManager).notify(200, builder.build());
                         } else {
 
                             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, Channel.CHANNEL_1_ID)
-                                    .setSmallIcon(R.drawable.ic_bookmark_border_black_24dp)
-                                    .setContentTitle("My News")
+                                    .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
+                                    .setContentTitle("MyNews")
                                     .setContentText("Your articles of the day are ready")
                                     .setOngoing(true);
                             notificationBuilder.build();
