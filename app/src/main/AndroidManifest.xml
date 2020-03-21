@@ -18,10 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver
-            android:name=".Utils.NotificationsNewsReceiver"
-            android:enabled="true"
-            android:exported="true" />
+        <receiver android:name=".Utils.NotificationsNewsReceiver">
+            <intent-filter>
+                <action android:name="my.action.string" />
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".Activities.NYSearchResultActivity"></activity>
 

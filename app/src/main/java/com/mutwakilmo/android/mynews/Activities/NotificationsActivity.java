@@ -120,67 +120,64 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
         artsCB.setChecked(isArtsChecked);
         artsCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isArtsChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isArtsChecked", b);
                 editor.apply();
             }
         });
-
 
         /*-------------politicsCB-----------------*/
         politicsCB.setChecked(isPoliticsChecked);
         politicsCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isPoliticsChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isPoliticsChecked", b);
                 editor.apply();
             }
         });
+
         /*-------------sportsCB-----------------*/
         sportsCB.setChecked(isSportsChecked);
         sportsCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isPoliticsChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isSportsChecked", b);
                 editor.apply();
             }
         });
+
         /*-------------businessCB-----------------*/
         businessCB.setChecked(isBusinessChecked);
-        politicsCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        businessCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isBusinessChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isBusinessChecked", b);
                 editor.apply();
             }
         });
-        /*-------------sportsCB-----------------*/
-        sportsCB.setChecked(isSportsChecked);
-        sportsCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isSportsChecked", String.valueOf(isChecked));
-                editor.apply();
-            }
-        });
+
         /*-------------entrepreneursCB-----------------*/
         entrepreneursCB.setChecked(isEntrepreneursChecked);
         entrepreneursCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isEntrepreneursChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isEntrepreneursChecked", b);
                 editor.apply();
             }
         });
+
         /*-------------travelCB-----------------*/
         travelCB.setChecked(isTravelChecked);
         travelCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                editor.putString("isTravelChecked", String.valueOf(isChecked));
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("isTravelChecked", b);
                 editor.apply();
             }
         });
+
+
+
         /*-------------notificationSwitch-----------------*/
 
         if (notificationSwitch != null) {
@@ -215,6 +212,10 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
         setActionBar(toolbar);
     }
 
+
+    // --------------------------------
+    //Action Bar
+    // -------------------------------
     private void setActionBar(Toolbar toolbar) {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setTitle(null);
@@ -222,14 +223,17 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-
     // --------------------------------
     // SharedPref
     // -------------------------------
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        Toast.makeText(this, "Notifications are " + (isChecked ? "on" : "off"), Toast.LENGTH_SHORT).show();
+
         SharedPreferences.Editor editor = getSharedPreferences(NY_PREFS_NAME, MODE_PRIVATE).edit();
         editor.putBoolean("isChecked", isChecked);
         editor.apply();
+
+
     }
 
     // --------------------------------
