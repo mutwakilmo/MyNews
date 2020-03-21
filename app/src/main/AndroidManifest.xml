@@ -10,13 +10,22 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".Channel"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver
+            android:name=".Utils.NotificationsNewsReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".Activities.NYSearchResultActivity"></activity>
+
+
         <!-- A child of the main activity -->
         <activity
             android:name=".Activities.NotificationsActivity"
@@ -60,6 +69,7 @@
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.WelcomeActivity" />
         <activity android:name=".Activities.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

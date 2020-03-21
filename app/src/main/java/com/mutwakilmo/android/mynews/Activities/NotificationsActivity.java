@@ -18,11 +18,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.mutwakilmo.android.mynews.Utils.NotificationsNewsReceiver;
 import com.mutwakilmo.android.mynews.R;
 import com.mutwakilmo.android.mynews.Utils.InternetDialog;
+import com.mutwakilmo.android.mynews.Utils.NotificationsNewsReceiver;
 
 import java.util.Calendar;
 import java.util.Objects;
@@ -30,7 +31,9 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NotificationsActivity extends AppCompatActivity {
+public class NotificationsActivity extends AppCompatActivity  implements CompoundButton.OnCheckedChangeListener {
+
+    private NotificationManagerCompat mNotificationManagerCompat;
     // Class name for Log tag
     public static final String TAG_LOG_NOTIFICATIONS = NotificationsActivity.class.getSimpleName();
     @BindView(R.id.toolbar_title)
@@ -75,6 +78,7 @@ public class NotificationsActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Log.d(TAG_LOG_NOTIFICATIONS, "onCreate: ");
 
+
         final SharedPreferences.Editor editor = getSharedPreferences(NY_PREFS_NAME, MODE_PRIVATE).edit();
         SharedPreferences sharedPreferences = getSharedPreferences(NY_PREFS_NAME, MODE_PRIVATE);
 
@@ -97,7 +101,7 @@ public class NotificationsActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                editor.putString("textNotifications", editTextSearchNotification.getText().toString());
+                editor.putString("editTextNotification", editTextSearchNotification.getText().toString());
                 editor.apply();
             }
 
@@ -121,6 +125,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
+
 
         /*-------------politicsCB-----------------*/
         politicsCB.setChecked(isPoliticsChecked);
@@ -222,7 +227,6 @@ public class NotificationsActivity extends AppCompatActivity {
     // SharedPref
     // -------------------------------
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Toast.makeText(this, "Notifications are " + (isChecked ? "on" : "off"), Toast.LENGTH_SHORT).show();
         SharedPreferences.Editor editor = getSharedPreferences(NY_PREFS_NAME, MODE_PRIVATE).edit();
         editor.putBoolean("isChecked", isChecked);
         editor.apply();

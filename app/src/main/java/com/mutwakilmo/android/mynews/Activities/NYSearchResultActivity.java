@@ -70,7 +70,7 @@ public class NYSearchResultActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(NYSearchResultActivity.this));
             listItems = new ArrayList<>();
             mAdapter = new NewsAdapter(listItems, NYSearchResultActivity.this);
-            ;
+
             Call<ArticleSearchResponse> call;
             call = mNewYorkTimesService.getArticleSearch(searchQuery, Objects.requireNonNull(categoriesSelected).toString().replace("[", "").replace("]", ""), theBeginDateString, theEndDateString, "FAPKrODFWcdFsvvfOBe8huf5SCc0NnBP");
             Toast.makeText(this, searchQuery, Toast.LENGTH_SHORT).show();
