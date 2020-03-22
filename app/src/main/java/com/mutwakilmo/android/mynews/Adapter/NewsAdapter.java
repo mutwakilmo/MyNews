@@ -62,8 +62,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         // viewHolder.textViewSubsection.setText(listItem.getSubsection());
             viewHolder.titleTextView.setText(listItem.getDesc() +"");
             viewHolder.dateTextView.setText(listItem.getDate() );
+
+//            if (listItem.getSection()!= null && listItem.getSection().equals("")) {
+//                viewHolder.sectionTextView.setText(listItem.getSection());
+//                if (listItem.getSubsection() != null && listItem.getSubsection().equals("")){
+//                    viewHolder.sectionTextView.setText(listItem.getSection() + "->" + listItem.getSubsection());
+//
+//                }
+//            }
+
             Glide.with(context)
-                    .load(listItem.getUrlImage())
+                    .load("https://static01.nyt.com/" + listItem.getUrlImage())
                     .fallback(R.mipmap.ic_launcher)
                     .placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)

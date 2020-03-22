@@ -67,7 +67,7 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + "");
         holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
 
-        if (topStoriesResultsItem.getMultimedia().size() > 0)
+        if (topStoriesResultsItem.getMultimedia() != null &&topStoriesResultsItem.getMultimedia().size() > 0)
             Glide.with(mContext)
                     .load(topStoriesResultsItem.getMultimedia().get(0).getUrl())
                     .fallback(R.mipmap.ic_launcher)

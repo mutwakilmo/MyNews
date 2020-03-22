@@ -12,6 +12,7 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
+import com.mutwakilmo.android.mynews.Activities.MainActivity;
 import com.mutwakilmo.android.mynews.BuildConfig;
 import com.mutwakilmo.android.mynews.Channel;
 import com.mutwakilmo.android.mynews.Models.SearchNewYork.ArticleSearchResponse;
@@ -47,8 +48,8 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
 
         final NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-
-        final PendingIntent pendingIntent = PendingIntent.getActivity(context, 200, intent, FLAG_UPDATE_CURRENT);
+        Intent activityIntent = new Intent(context, MainActivity.class);
+        final PendingIntent pendingIntent = PendingIntent.getActivity(context, 200, activityIntent, FLAG_UPDATE_CURRENT);
 
 
         ArrayList<String> categoriesCBSelected = new ArrayList<>();
@@ -112,6 +113,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
                             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, Channel.CHANNEL_1_ID)
                                     .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
                                     .setContentTitle("MyNews")
+                                    .setContentIntent(pendingIntent)
                                     .setContentText("Your articles of the day are ready")
                                     .setOngoing(true);
                             notificationBuilder.build();
