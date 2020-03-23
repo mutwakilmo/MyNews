@@ -14,7 +14,6 @@ import androidx.core.app.NotificationCompat;
 
 import com.mutwakilmo.android.mynews.Activities.MainActivity;
 import com.mutwakilmo.android.mynews.BuildConfig;
-import com.mutwakilmo.android.mynews.Channel;
 import com.mutwakilmo.android.mynews.Models.SearchNewYork.ArticleSearchResponse;
 import com.mutwakilmo.android.mynews.R;
 
