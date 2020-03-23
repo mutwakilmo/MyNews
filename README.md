@@ -48,6 +48,7 @@ For this project, you'll submit a .zip file containing:
 ## Libraries Used
 
 * [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
+* [CircleCi](https://circleci.com/)
 * [lottie-android](https://github.com/airbnb/lottie-android)
 * [Butterknife](https://github.com/JakeWharton/butterknife)
 * [Retrofit](https://github.com/square/retrofit)
