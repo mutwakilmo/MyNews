@@ -11,8 +11,8 @@ import android.os.Build;
 public class Channel  extends Application {
 
     //in real app you give it a name for ...
-    public static final String CHANNEL_1_ID = "channel1";
-    public static final String CHANNEL_2_ID = "channel2";
+    public static final String FAVOURITE_CONTENT = "favouriteContent";
+    public static final String BREAKING_NEWS = "breaking_news";
 
     @Override
     public void onCreate() {
@@ -25,24 +25,24 @@ public class Channel  extends Application {
         //the notification is not available in lower version
         //for orio
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel1 = new NotificationChannel(
-                    CHANNEL_1_ID,
-                    "Channel 1",
+            NotificationChannel favourite_content = new NotificationChannel(
+                    FAVOURITE_CONTENT,
+                    "Favourite Content",
                     //constant define how the notification behave
                     NotificationManager.IMPORTANCE_HIGH
             );
-            channel1.setDescription("This is Chanel 1");
+            favourite_content.setDescription("This is Chanel 1");
 
-            NotificationChannel channel2 = new NotificationChannel(
-                    CHANNEL_2_ID,
-                    "Channel 2",
+            NotificationChannel breaking_news = new NotificationChannel(
+                    BREAKING_NEWS,
+                    "Breaking News",
                     NotificationManager.IMPORTANCE_LOW
             );
-            channel2.setDescription("This channel is 2");
+            breaking_news.setDescription("This channel is 2");
 
             NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel1);
-            manager.createNotificationChannel(channel2);
+            manager.createNotificationChannel(favourite_content);
+            manager.createNotificationChannel(breaking_news);
         }
     }
 }

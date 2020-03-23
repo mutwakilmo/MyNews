@@ -110,7 +110,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
                             Objects.requireNonNull(notificationManager).notify(200, builder.build());
                         } else {
 
-                            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, Channel.CHANNEL_1_ID)
+                            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, Channel.FAVOURITE_CONTENT)
                                     .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
                                     .setContentTitle("MyNews")
                                     .setContentIntent(pendingIntent)

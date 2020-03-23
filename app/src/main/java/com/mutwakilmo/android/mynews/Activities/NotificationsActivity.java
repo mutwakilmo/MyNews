@@ -207,10 +207,7 @@ public class NotificationsActivity extends AppCompatActivity  implements Compoun
                     AlarmManager.INTERVAL_HALF_HOUR, pendingIntent);
 
 
-//            Intent intent1 = new Intent("my.action.string");
-//            intent.putExtra("searchQuery", "search");
-//            intent.putExtra("categoriesSelected", (ArrayList) categoriesBeSelected);
-//            sendBroadcast(intent1);
+
 
         }
 
