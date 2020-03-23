@@ -3,6 +3,8 @@
 An Android news app that fetches news from The New York Times API.
 
 
+<img src="./art/GIF-200323_125043.gif" width="25%"> 
+
 ### Deliverables
 
 For this project, you'll submit a .zip file containing:
