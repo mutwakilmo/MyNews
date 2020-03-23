@@ -102,7 +102,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
                                     .setContentIntent(pendingIntent)
                                     .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
                                     .setContentTitle("MyNews")
-                                    .setContentText("Your articles of the day are ready")
+                                    .setContentText("\uD83D\uDDFD Please don't forget to read your favourite article....")
 
                                     .setAutoCancel(true);
 
@@ -113,7 +113,7 @@ public class NotificationsNewsReceiver extends BroadcastReceiver {
                                     .setSmallIcon(R.drawable.ic_notifications_active_black_24dp)
                                     .setContentTitle("MyNews")
                                     .setContentIntent(pendingIntent)
-                                    .setContentText("Your articles of the day are ready")
+                                    .setContentText("\uD83D\uDDFD Please don't forget to read your favourite article....")
                                     .setOngoing(true);
                             notificationBuilder.build();
                             Objects.requireNonNull(notificationManager).notify(1, notificationBuilder.build());
