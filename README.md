@@ -19,7 +19,9 @@ For this project, you'll submit a .zip file containing:
 <img src="./art/screenNotification2.png" width="25%"> &ensp;<img src="./art/screenSearch.png" width="25%"> &ensp;<img src="./art/screenLoadingSearch.png" width="25%">
 &ensp;<img src="./art/screenSearchResult.png" width="25%">&ensp;<img src="./art/screenHelp.png" width="25%">
 
-<img src="./art/screenAbout.png" width="25%"> 
+<img src="./art/screenAbout.png" width="25%"> &ensp;<img src="./art/screenNointernet.png" width="25%">
+
+
 ### Skills
 
 -   Implement integration tests
