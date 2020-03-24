@@ -8,7 +8,7 @@ An Android news app that fetches news from The New York Times API.
 
 
 
-**MyNews Vimeo video 📽️**
+**MyNews Vimeo video 📽️ 👇**
 
  <a href='https://vimeo.com/399851026'><img alt='MyNews vedio' src='https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-vimeo-512.png' width="10%" height="10%"/></a>
  
