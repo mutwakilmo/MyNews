@@ -24,7 +24,7 @@
     <string name="food">Food</string>
     <string name="politics">Politics</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="movies">Movies</string>
     <string name="books">Books</string>

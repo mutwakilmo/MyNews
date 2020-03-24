@@ -46,7 +46,7 @@ public class MainFragment extends Fragment {
     // 1 - Declare the SwipeRefreshLayout
     @BindView(R.id.fragment_main_swipe_container)
     SwipeRefreshLayout swipeRefreshLayout;
-//    @BindView(R.id.shimmer_view_container)
+    //    @BindView(R.id.shimmer_view_container)
 //    ShimmerFrameLayout mShimmerViewContainer;
     private RecyclerView myNewsRecyclerView;
     private TopStoriesAdapter mTopStoriesAdapter;
@@ -67,7 +67,7 @@ public class MainFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment MainFragment.
      */
-    // TODO: Rename and change types and number of parameters
+
     public static MainFragment newInstance(String sectionName) {
         Bundle bundle = new Bundle();
         bundle.putString(NYTConstants.NYT_SECTION_NAME, sectionName);
@@ -75,7 +75,6 @@ public class MainFragment extends Fragment {
         mainFragment.setArguments(bundle);
         return mainFragment;
     }
-
 
 
     @Override
