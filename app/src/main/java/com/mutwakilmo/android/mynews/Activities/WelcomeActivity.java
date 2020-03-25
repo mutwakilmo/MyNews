@@ -9,10 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.muddzdev.styleabletoast.StyleableToast;
-import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 import com.mutwakilmo.android.mynews.R;
-
-import java.net.InetAddress;
+import com.mutwakilmo.android.mynews.Utils.InternetDialog;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,14 +50,6 @@ public class WelcomeActivity extends AppCompatActivity {
         startActivity(i);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
-    public boolean isInternetAvailable() {
-        try {
-            InetAddress ipAddr = InetAddress.getByName("google.com");
-            //You can replace it with your name
-            return !ipAddr.equals("");
 
-        } catch (Exception e) {
-            return false;
-        }
     }
-}
+

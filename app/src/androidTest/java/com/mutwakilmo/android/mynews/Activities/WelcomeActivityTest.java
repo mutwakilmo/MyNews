@@ -31,25 +31,29 @@ public class WelcomeActivityTest {
     //reference to welcomeActivity
     private WelcomeActivity mWelcomeActivity = null;
     //Activity monitor
-    Instrumentation.ActivityMonitor mMonitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null,false);
+    Instrumentation.ActivityMonitor mMonitor = getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
+
     @Before
     public void setUp() throws Exception {
         mWelcomeActivity = mWelcomeActivityActivityTestRule.getActivity();
+
+
     }
 
     @Test
-    public void testLaunchMainActivityOnButtonClicked(){
+    public void testLaunchMainActivityOnButtonClicked() {
 
         assertNotNull(mWelcomeActivity.findViewById(R.id.start_btn));
         //perform click on btn using espresso(UI)
         onView(withId(R.id.start_btn)).perform(click());
 
         //timeOut in milliseconds
-        Activity mainActivity = getInstrumentation().waitForMonitorWithTimeout(mMonitor,5000);
+        Activity mainActivity = getInstrumentation().waitForMonitorWithTimeout(mMonitor, 5000);
         assertNotNull(mainActivity);
-       // mainActivity.finish();
+        // mainActivity.finish();
 
     }
+
     @After
     public void tearDown() throws Exception {
         mWelcomeActivity = null;
