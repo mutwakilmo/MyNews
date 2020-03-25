@@ -56,7 +56,10 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
     @Override
     public void onBindViewHolder(@NonNull NewsItemViewHolder holder, int position) {
         TopStoriesResultsItem topStoriesResultsItem = topStoriesResultsItems.get(position);
-
+        // -------------------------------------------------------------------------------------
+        //    A ViewHolder (RecyclerView.ViewHolder): Used to visually represent an element in the data list
+        //     in the RecyclerView (a line).
+        // -------------------------------------------------------------------------------------
         // lets create the animation for the whole card
         holder.container.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
         holder.dateTextView.setText(topStoriesResultsItem.getPublishedDate().substring(0, 10) + "");
@@ -66,7 +69,10 @@ public class TopStoriesAdapter extends RecyclerView.Adapter<TopStoriesAdapter.Ne
 
             holder.sectionTextView.setText(topStoriesResultsItem.getSection() + "");
         holder.titleTextView.setText(topStoriesResultsItem.getTitle() + "");
-
+        // -------------------------------------------------------------------------------------
+        //     Glide. This library will retrieve the image from a URL in the background on its own,
+        //     then display it in an ImageView that you've specified.
+        // -------------------------------------------------------------------------------------
         if (topStoriesResultsItem.getMultimedia() != null &&topStoriesResultsItem.getMultimedia().size() > 0)
             Glide.with(mContext)
                     .load(topStoriesResultsItem.getMultimedia().get(0).getUrl())

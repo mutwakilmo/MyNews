@@ -3,6 +3,7 @@ package com.mutwakilmo.android.mynews.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,11 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
 
         NYMostPopularResult nyMostPopularResult = nyMostPopularResults.get(position);
 
+        // -------------------------------------------------------------------------------------
+        //    A ViewHolder (RecyclerView.ViewHolder): Used to visually represent an element in the data list
+        //     in the RecyclerView (a line).
+        // -------------------------------------------------------------------------------------
+
         holder.container.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
         holder.dateTextView.setText(nyMostPopularResult.getPublishedDate().substring(0, 10) + "");
         holder.titleTextView.setText(nyMostPopularResult.getTitle() + "");
@@ -79,6 +85,11 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
             //    viewHolder.relativeLayout.setBackgroundColor(R.color.colorPrimaryDark);
         });
 
+
+        // -------------------------------------------------------------------------------------
+        //     Glide. This library will retrieve the image from a URL in the background on its own,
+        //     then display it in an ImageView that you've specified.
+        // -------------------------------------------------------------------------------------
 
         if (nyMostPopularResult.getMedia().size() > 0 && nyMostPopularResult.getMedia().get(0).getMediaMetadata().size() > 0)
             Glide.with(mContext)
@@ -117,6 +128,7 @@ public class MostPopularAdapter extends RecyclerView.Adapter<MostPopularAdapter.
             // //Initialize ButterKnife
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(view -> {
+                Log.e("TAG", "Position : ");
                 if (mListener != null) {
                     int position = getAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) ;

@@ -187,6 +187,8 @@ public class SearchActivity extends AppCompatActivity {
             formatTime();
         }
 
+
+        //Todo format to local device time
         private void formatTime() {
             String mFormat = "yyyyMMdd";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(mFormat, Locale.FRANCE);

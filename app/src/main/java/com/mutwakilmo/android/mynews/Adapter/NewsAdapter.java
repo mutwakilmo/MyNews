@@ -58,6 +58,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         final ListItem listItem = listItems.get(i);
 
         viewHolder.container.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale_animation));
+
+        // -------------------------------------------------------------------------------------
+        //    A ViewHolder (RecyclerView.ViewHolder): Used to visually represent an element in the data list
+        //     in the RecyclerView (a line).
+        // -------------------------------------------------------------------------------------
+
         // viewHolder.textViewSection.setText(listItem.getSection());
         // viewHolder.textViewSubsection.setText(listItem.getSubsection());
             viewHolder.titleTextView.setText(listItem.getDesc() +"");
@@ -70,7 +76,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 //
 //                }
 //            }
-
+        // -------------------------------------------------------------------------------------
+        //     Glide. This library will retrieve the image from a URL in the background on its own,
+        //     then display it in an ImageView that you've specified.
+        // -------------------------------------------------------------------------------------
             Glide.with(context)
                     .load("https://static01.nyt.com/" + listItem.getUrlImage())
                     .fallback(R.mipmap.ic_launcher)

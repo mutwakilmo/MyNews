@@ -45,10 +45,14 @@ public interface NewYorkTimesService {
             .build();
 
 
-    /*--------------------
+    /*------------------------------------------------------------------------------
     |NY Times MostPopular API
-    |
-    |---------------------*/
+    |@@GET("mostpopular/v2/viewed/{period}.json")
+    |Used to indicate to Retrofit that we want to perform a REST request of the GET
+    | @Path("period") int PERIOD,
+    |As a parameter in our method getNYMostPopular(), we’re indicating a String variable
+    |representing the parameter that Retrofit will place in the URL of the GET method
+    |--------------------------------------------------------------------------------*/
 
     @GET("mostpopular/v2/viewed/{period}.json")
     Call<NYMostPopularResponse> getNYMostPopular(
