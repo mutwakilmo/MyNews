@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import androidx.test.rule.ActivityTestRule;
@@ -19,6 +20,8 @@ import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.contrib.PickerActions.setDate;
+import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.matcher.ViewMatchers.isChecked;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -82,12 +85,14 @@ public class SearchActivityTest {
         //timeOut in milliseconds
         Activity nYSearchResultActivity = getInstrumentation().waitForMonitorWithTimeout(mMonitor, 5000);
         assertNotNull(nYSearchResultActivity);
-         nYSearchResultActivity.finish();
+        nYSearchResultActivity.finish();
 
     }
+
     @Test
-    public void testViewsDisplayOnActivity(){
+    public void testViewsDisplayOnActivity() {
         onView(withId(R.id.editTextSearch)).check(matches(isDisplayed()));
+
         onView(withId(R.id.editTextBeginDate)).check(matches(isDisplayed()));
         onView(withId(R.id.editTextEndDate)).check(matches(isDisplayed()));
 
@@ -100,9 +105,13 @@ public class SearchActivityTest {
     }
 
     @Test
-    public void testViewsCheckable(){
-        //Clearing the TextInputEditText and unchecking the checkboxes
+    public void testViewsCheckable() {
+        // -------------------------------------------------------------
+        // SearchEditText and Check and  un-checking the checkboxes
+        // --------------------------------------------------------------
+
         onView(withId(R.id.editTextSearch)).perform(clearText());
+
 
         if (cb_arts.isChecked()) onView(withId(R.id.artsCB)).perform(click());
         if (cb_business.isChecked()) onView(withId(R.id.businessCB)).perform(click());
@@ -111,24 +120,52 @@ public class SearchActivityTest {
         if (cb_entrepreneurs.isChecked()) onView(withId(R.id.entrepreneursCB)).perform(click());
         if (cb_travel.isChecked()) onView(withId(R.id.travelCB)).perform(click());
 
-        //Writing something on the EditText
+        // ------------------------------------------------------------------------------------
+        // SearchEditText Writing Hello Search Test from Belgium StayHome StaySafe on the EditText
+        // -----------------------------------------------------------------------------------
+
         onView(withId(R.id.editTextSearch))
                 .perform(typeText("Hello Search Test from Belgium StayHome StaySafe"))
                 .check(matches(isDisplayed()));
 
-        //Checking the checkboxes are checked when clicked
+
+        // --------------------------------------------------------------
+        // Checking the categoriesSelected are checked when clicked
+        // --------------------------------------------------------------
+
         onView(withId(R.id.artsCB)).perform(click()).check(matches(isChecked()));
         onView(withId(R.id.businessCB)).perform(click()).check(matches(isDisplayed()));
         onView(withId(R.id.sportsCB)).perform(click()).check(matches(isDisplayed()));
         onView(withId(R.id.entrepreneursCB)).perform(click()).check(matches(isDisplayed()));
         onView(withId(R.id.travelCB)).perform(click()).check(matches(isDisplayed()));
 
-        //We uncheck all the checkboxes
+        // --------------------------------------------------------------
+        // unChecking the categoriesSelected are checked when clicked
+        // --------------------------------------------------------------
+
         if (cb_arts.isChecked()) onView(withId(R.id.artsCB)).perform(click());
         if (cb_politics.isChecked()) onView(withId(R.id.politicsCB)).perform(click());
         if (cb_business.isChecked()) onView(withId(R.id.businessCB)).perform(click());
         if (cb_sports.isChecked()) onView(withId(R.id.sportsCB)).perform(click());
         if (cb_entrepreneurs.isChecked()) onView(withId(R.id.entrepreneursCB)).perform(click());
         if (cb_travel.isChecked()) onView(withId(R.id.travelCB)).perform(click());
+
+
+    }
+
+    @Test
+    public void testBeginDateInDatePicker() {
+        // Show the date picker
+        onView(withId(R.id.editTextBeginDate)).perform(click());
+        // Sets a date on the date picker widget
+        onView(isAssignableFrom(DatePicker.class)).perform(setDate(1988, 11, 27));
+    }
+
+    @Test
+    public void testEndDateInDatePicker(){
+        // Show the date picker
+        onView(withId(R.id.editTextEndDate)).perform(click());
+        // Sets a date on the date picker widget
+        onView(isAssignableFrom(DatePicker.class)).perform(setDate(1988, 11, 27));
     }
 }
