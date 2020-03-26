@@ -54,7 +54,7 @@ public class NewYorkTimesWebViewActivity extends AppCompatActivity {
         Intent myIntent = getIntent();
         String websiteUrl = Objects.requireNonNull(myIntent.getExtras()).getString("websiteUrl");
         // Toast.makeText(this, websiteUrl, Toast.LENGTH_LONG).show();
-        StyleableToast.makeText(this, "Reading is important because it develops the mind\uD83E\uDD71\uD83D\uDC53", R.style.mytoast).show();
+        StyleableToast.makeText(this, "Stay home it saves lives", R.style.mytoast).show();
 
 
         mWebView.setWebViewClient(new WebViewClient());
