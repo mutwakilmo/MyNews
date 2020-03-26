@@ -36,8 +36,6 @@ public class WelcomeActivityTest {
     @Before
     public void setUp() throws Exception {
         mWelcomeActivity = mWelcomeActivityActivityTestRule.getActivity();
-
-
     }
 
     @Test

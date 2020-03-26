@@ -162,10 +162,11 @@ public class SearchActivityTest {
     }
 
     @Test
-    public void testEndDateInDatePicker(){
+    public void testEndDateInDatePicker() {
         // Show the date picker
         onView(withId(R.id.editTextEndDate)).perform(click());
         // Sets a date on the date picker widget
         onView(isAssignableFrom(DatePicker.class)).perform(setDate(1988, 11, 27));
     }
+
 }

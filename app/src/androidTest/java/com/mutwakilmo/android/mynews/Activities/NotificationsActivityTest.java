@@ -79,5 +79,5 @@ public class NotificationsActivityTest {
                 .perform(typeText("StayHome StaySafe"))
                 .check(matches(isDisplayed()));
     }
-    
+
 }
