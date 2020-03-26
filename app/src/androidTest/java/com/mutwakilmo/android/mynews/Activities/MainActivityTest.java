@@ -102,6 +102,6 @@ public class MainActivityTest {
     public void testNavigationDrawer(){
         onView(withId(R.id.drawer_layout)).perform();
     }
-    
+
 
 }

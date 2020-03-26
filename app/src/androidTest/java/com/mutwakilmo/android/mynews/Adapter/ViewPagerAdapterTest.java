@@ -1,4 +1,4 @@
-package com.mutwakilmo.android.mynews.Fragments;
+package com.mutwakilmo.android.mynews.Adapter;
 
 import org.junit.Before;
 
@@ -7,11 +7,7 @@ import org.junit.Before;
  */
 
 //Todo I have no idea where to start
-
-public class MainFragmentTest {
-
-
-
+public class ViewPagerAdapterTest {
 
     @Before
     public void setUp() throws Exception {
