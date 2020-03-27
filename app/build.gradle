@@ -94,10 +94,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.cardview:cardview:1.0.0"
 
-    implementation 'com.squareup.picasso:picasso:2.71828'
-
-
-
+    
 
     // Core library
     androidTestImplementation 'androidx.test:core:1.2.0'
