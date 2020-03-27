@@ -76,6 +76,9 @@ dependencies {
 
     // debugImplementation because LeakCanary should only run in debug builds.
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    // Optional, if you use support library fragments:
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
     //------------------------------------------------------------------------------------
     //You are getting this error because you've reached (and went over) the limit
     // of the android build architecture - a single DEX file can hold only around 64 thousand
@@ -94,7 +97,7 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.cardview:cardview:1.0.0"
 
-    
+
 
     // Core library
     androidTestImplementation 'androidx.test:core:1.2.0'
