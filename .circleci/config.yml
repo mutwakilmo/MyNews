@@ -40,3 +40,12 @@ jobs:
 
       # run tests!
       - run: gradle
+
+      - run:
+         name: Run UnitTest
+         command: ./gradlew testDebugUnitTest
+      - store_artifacts:
+         path: app/build/reports
+         destination: reports
+      - store_test_results:
+         path: app/build/test-results
