@@ -167,7 +167,7 @@ public class SearchActivity extends AppCompatActivity {
             formatTime();
         }
 
-        private void formatTime() {
+        public void formatTime() {
             String mFormat = "yyyyMMdd";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(mFormat, Locale.FRANCE);
             beginDate[0] = simpleDateFormat.format(mCalendar.getTime());
