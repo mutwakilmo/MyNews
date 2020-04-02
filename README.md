@@ -22,8 +22,8 @@ For this project, you'll submit a .zip file containing:
 
 
 
-<img src="./art/screensplash.png" width="25%"> &ensp;<img src="./art/screen.png" width="25%"> &ensp;<img src="./art/screenMain.png" width="25%">
-&ensp;<img src="./art/screenNavigationDrawer.png" width="25%">&ensp;<img src="./art/screenNotifications.png" width="25%">
+<img src="./art/screensplash.png" width="25%"> &ensp;<img src="./art/screenMain.png" width="25%">
+&ensp;<img src="./art/screenNotifications.png" width="25%">
 
 <img src="./art/screenNotification2.png" width="25%"> &ensp;<img src="./art/screenSearch.png" width="25%"> &ensp;<img src="./art/screenLoadingSearch.png" width="25%">
 &ensp;<img src="./art/screenSearchResult.png" width="25%">&ensp;<img src="./art/screenHelp.png" width="25%">
