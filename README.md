@@ -4,7 +4,7 @@ An Android news app that fetches news from The New York Times API.
 
 <a href=''><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="30%" height="30%"/></a>
 
-<img src="./art/GIF-200323_125043.gif" width="25%"> 
+<img src="./art/GIF-200402_180233.gif" width="25%"> 
 
 
 
