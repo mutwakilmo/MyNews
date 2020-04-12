@@ -2,7 +2,7 @@
 # MyNews
 An Android news app that fetches news from The New York Times API.
 
-<a href='https://play.google.com/store/apps/dev?id=8103420999836613602&hl=en'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="30%" height="30%"/></a>
+<a href='https://play.google.com/store/apps/details?id=com.mutwakilmo.android.mynewsapp'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="30%" height="30%"/></a>
 
 <img src="./art/GIF-200402_180233.gif" width="25%"> 
 
