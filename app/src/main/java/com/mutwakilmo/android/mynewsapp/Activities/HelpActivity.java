@@ -35,7 +35,7 @@ public class HelpActivity extends AppCompatActivity {
         //Initialize ButterKnife
         ButterKnife.bind(this);
         Log.d(TAG_LOG_HELP, "onCreate: ");
-        // CALL getInternetStatus() function to check for internet and display error dialog
+        // @CALL getInternetStatus() function to check for internet and display error dialog
         if(new InternetDialog(this).getInternetStatus()){
             Toast.makeText(this, "MyNews Online\uD83D\uDCF6", Toast.LENGTH_SHORT).show();
         }
