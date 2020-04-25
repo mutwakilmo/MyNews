@@ -8,6 +8,8 @@ An Android news app that fetches news from The New York Times API.
 
 
 
+<a href='https://trello.com/b/W40DLNcu/mynews-app'><img alt='Get it on Google Play' src='https://www.idalko.com/wp-content/uploads/2018/03/Trello-Guide.png' width="30%" height="30%"/></a>
+
 **MyNews Vimeo video 📽️ 👇**
 
  <a href='https://vimeo.com/403358855'><img alt='MyNews vedio' src='https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-vimeo-512.png' width="10%" height="10%"/></a>
